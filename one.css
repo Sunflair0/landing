@@ -1,0 +1,81 @@
+body {
+	background-image: repeating-linear-gradient(rgb(246, 229, 116), rgb(178, 184, 4));
+}
+
+body::before {
+	content: "";
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.8), transparent);
+	background-size: 20px 20px;
+	height: 100%;
+	width: 100%;
+	margin-top: -10px;
+	z-index: -1;
+}
+
+.main_square {
+	display: flex;
+	position: relative;
+	border-radius: 5px;
+	top: calc(5vh - 12px);
+	margin: auto;
+	height: 90vh;
+	width: 90%;
+	border: 2px solid rgb(4, 86, 9);
+	background-color: rgb(0, 255, 255);
+	box-shadow: 0 0 10px black;
+}
+
+.circle {
+	position: absolute;
+	border-radius: 50%;
+	height: 60%;
+	aspect-ratio: 1;
+	border: 3px solid rgba(228, 175, 29, 0.475);
+	margin: auto;
+	inset: 0;
+	box-shadow: inset 0 0 7px black;
+	background: repeating-conic-gradient(black 30deg, #af890d 60deg, black 90deg),
+		rgb(204, 191, 115);
+	animation: round 30s linear infinite;
+}
+
+@keyframes round {
+	100% {
+		rotate: z 360deg;
+	}
+}
+
+.mini_circle {
+	position: absolute;
+	border-radius: 50%;
+	height: 97%;
+	aspect-ratio: 1;
+	background-image: repeating-radial-gradient(rgb(0, 0, 0), transparent);
+	background-size: 20px 20px;
+	border: 3px solid rgba(192, 172, 20, 0.455);
+	margin: auto;
+	inset: 0;
+	box-shadow: 0px 0px 40px #000000 inset,
+		0px 0px 80px #e5c512c0 inset;
+	animation: round 30s linear infinite reverse;
+
+}
+
+.glass {
+	height: 5rem;
+	width: 5rem;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	background-color: rgba(233, 14, 14, 0.2);
+}
+
+.glass::before {
+	content: "";
+	position: absolute;
+	height: 4.5rem;
+	width: 4.5rem;
+	/* margin: auto; */
+	/* inset: 0; */
+	background-color: rgb(93, 127, 59);
+}

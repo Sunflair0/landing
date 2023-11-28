@@ -1,0 +1,37 @@
+body {
+	background: rgb(26, 26, 26);
+	min-height: 100vh;
+}
+
+.square {
+	display: flex;
+	position: relative;
+	border-radius: 5px;
+	height: 70vh;
+	align-items: center;
+	aspect-ratio: 3/2;
+	margin: auto;
+	inset: 0;
+	border: 2px rgb(113,111,77) solid;
+}
+
+.circle {
+	position: absolute;
+	height: 20rem;
+	aspect-ratio: 1;
+	box-shadow: 20px 20px 50px rgba(182, 179, 136, 0.5) inset, 50px 50px 50px rgba(69, 68, 47, 0.5) inset, 100px 100px 50px rgba(42, 43, 23, 0.5) inset;
+	border-radius: 50%;
+	margin: auto;
+	inset: 0;
+	background-image: radial-gradient(circle at 50% 70%,
+			transparent 0%, rgb(26, 26, 26) 70%),
+		radial-gradient(circle at 75% 75%, transparent 10%, rgba(12, 6, 44, 0.4) 100%);
+}
+
+.star {
+	position: absolute;
+	clip-path: polygon(30% 0%, 56% 37%, 100% 30%, 63% 52%, 70% 100%, 48% 60%, 0% 70%, 41% 45%);
+	height: 5rem;
+	aspect-ratio: 1;
+	background-color: blueviolet;
+}

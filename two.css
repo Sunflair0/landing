@@ -1,0 +1,65 @@
+body {
+	background: radial-gradient(circle at 25% 10%, rgb(223, 179, 117), rgb(213, 168, 102), rgb(230, 169, 83));
+}
+
+
+.arc {
+	background-color: rgb(230, 169, 83);
+}
+
+.arc {
+	background-color: rgb(189, 173, 116);
+}
+.arc {
+	background-color: rgb(113,111,77);
+}
+
+.circle {
+	position: relative;
+	width: 20rem;
+	height: 10rem;
+	background: repeating-conic-gradient(from 180deg at 50% 100%, rgb(189, 173, 116) 0deg 11deg, black 11deg 12deg),
+		repeating-linear-gradient(0deg, green, transparent, blue 90%, transparent);
+	border-radius: 20rem 20rem 0 0;
+	transform-origin: bottom center;
+	border: rgb(101, 228, 228) 11px dotted ;
+	margin-left: -5%;
+	border-bottom: transparent;
+	animation: half-round 60s infinite linear;
+}
+
+.circle::before {
+	content: "";
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	background-color: rgb(225, 179, 110);
+	border-radius: 20rem 20rem 0 0;
+	inset: 0;
+	margin: auto;
+	margin-bottom: 0;
+}
+
+@keyframes half-round {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.center {
+	isolation: isolate;
+	position: absolute;
+	width: 2%;
+	aspect-ratio: 1;
+	border: black 3px solid;
+	background-color: aqua;
+	border-radius: 50%;
+	inset: 0;
+	margin: auto;
+	margin-top: 45%;
+box-shadow: 0 0 10px black inset;
+}
