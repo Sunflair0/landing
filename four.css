@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(196, 171, 135);
+	background-color: rgba(196, 171, 135, 0.592);
 	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
@@ -11,14 +11,13 @@ body {
 	display: flex;
 	position: absolute;
 	border-radius: 10px;
-	border: 5px double black;
+	border: 6px double rgba(255, 174, 52, 0.695);
 	height: 85vh;
 	width: 90%;
 	transform: translateZ(10px);
-	scale: 1;
 	margin: auto;
 	transform-style: preserve-3d;
-	background: rgba(211, 187, 8, 0.219);
+	background: linear-gradient(rgba(192, 181, 33, 0.3), rgba(193, 176, 45, 0.3), rgba(255, 255, 255, 0.3));
 	inset: 0;
 }
 

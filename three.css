@@ -1,18 +1,19 @@
 body {
 	background: rgb(26, 26, 26);
-	min-height: 100vh;
+position: relative;	
+min-height: 100vh;
 }
 
 .square {
 	display: flex;
-	position: relative;
+	position: absolute;
 	border-radius: 5px;
-	height: 70vh;
+	height: 80vh;
 	align-items: center;
 	aspect-ratio: 3/2;
 	margin: auto;
 	inset: 0;
-	border: 2px rgb(113,111,77) solid;
+	border: 2px rgb(113, 111, 77) solid;
 }
 
 .circle {
@@ -30,8 +31,22 @@ body {
 
 .star {
 	position: absolute;
-	clip-path: polygon(30% 0%, 56% 37%, 100% 30%, 63% 52%, 70% 100%, 48% 60%, 0% 70%, 41% 45%);
+	clip-path: polygon(30% 0%, 58% 40%, 100% 30%, 63% 55%, 70% 100%, 45% 60%, 0% 70%, 40% 45%);
 	height: 5rem;
 	aspect-ratio: 1;
 	background-color: blueviolet;
+	border: rgb(183, 0, 255) 20px solid;
+	animation: star 3s infinite linear;
+}
+
+@keyframes star {
+
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+
 }
