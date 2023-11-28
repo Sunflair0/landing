@@ -1,39 +1,38 @@
 body {
-	background-color: blanchedalmond;
-	/* width: 100vw; */
+	background-color: rgb(196, 171, 135);
 	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
 }
 
 .square {
-display: flex;
-    position: absolute;
-border-radius: 10px;
-border: 5px double black;
-height: 85vh;
-width: 90%;
-z-index: 100;
-scale: 1;
-margin: auto;
-background: rgba(246, 232, 126, 0.5);
-isolation: isolate;
-inset: 0;
+	display: flex;
+	position: absolute;
+	border-radius: 10px;
+	border: 5px double black;
+	height: 85vh;
+	width: 90%;
+	transform: translateZ(10px);
+	scale: 1;
+	margin: auto;
+	transform-style: preserve-3d;
+	background: rgba(211, 187, 8, 0.219);
+	inset: 0;
 }
 
 .blob1 {
-display: flex;
-    position: relative;
+	display: flex;
+	position: relative;
 	height: 20rem;
 	width: 20rem;
 	position: absolute;
 	rotate: 180deg;
-	border-radius: 50% 50% 64% 36% / 35% 70% 30% 65%;
+	border-radius: 40% 60% 66% 34% / 65% 25% 75% 35%;
 	margin-top: 29rem;
+	transform: translateZ(-100px);
 	right: 59rem;
-	z-index: -2;
-isolation: isolate;
-	border-radius: 64% 36% 35% 65% / 30% 71% 29% 70%;
 	background: linear-gradient(rgba(0, 0, 255, 0.748), rgba(233, 22, 166, 0.633));
 	animation: blob1 7.5s linear infinite;
 }
@@ -48,10 +47,7 @@ isolation: isolate;
 	border-radius: inherit;
 	box-shadow: 0 0 17px rgb(56, 52, 52) inset;
 	margin: auto;
-isolation: isolate;
-
 	inset: 0;
-z-index: -200;
 }
 
 .blob2 {
@@ -62,8 +58,7 @@ z-index: -200;
 	box-shadow: 0 0 50px rgb(208, 207, 207) inset;
 	rotate: 76deg;
 	margin-top: 32rem;
-filter: blur(0px);
-z-index: -200;
+	transform: translateZ(-100px);
 	right: -5rem;
 	background: linear-gradient(rgba(255, 221, 0, 0.6), green);
 	animation: blob1 9s linear infinite;
@@ -80,7 +75,6 @@ z-index: -200;
 	box-shadow: 0 0 25px rgb(56, 52, 52) inset;
 	margin: auto;
 	inset: 0;
-z-index: -200;
 }
 
 .blob3 {
@@ -91,7 +85,7 @@ z-index: -200;
 	box-shadow: 0 0 7px rgb(66, 65, 65) inset;
 	margin-top: -10rem;
 	right: 20rem;
-z-index: -200;
+	transform: translateZ(-100px);
 	border-radius: 40% 60% 66% 34% / 65% 25% 75% 35%;
 	background-image: linear-gradient(rgba(199, 1, 54, 0.693), rgba(236, 149, 17, 0.716));
 	animation: blob1 8s linear infinite;
@@ -108,13 +102,11 @@ z-index: -200;
 	box-shadow: 0 0 17px rgb(56, 52, 52) inset;
 	margin: auto;
 	inset: 0;
-z-index: -200;
 }
 
 @keyframes blob1 {
 
-	0%,
-	100% {
+	0% {
 		border-radius: 40% 60% 66% 34% / 65% 25% 75% 35%;
 	}
 
