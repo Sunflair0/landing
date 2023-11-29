@@ -7,6 +7,10 @@ footer {
 	background: rgb(157, 10, 103);
 }
 
-.color {
-	background: rgb(250, 229, 166);
+header {
+	border-bottom: rgb(0, 0, 0) 1px solid;
+}
+
+footer {
+	border-top: rgb(0, 0, 0) 1px solid;
 }

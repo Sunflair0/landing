@@ -7,3 +7,11 @@ header,
 footer {
 	background: rgb(0, 0, 0);
 }
+
+header {
+	border-bottom: aliceblue 1px solid;
+}
+
+footer {
+	border-top: aliceblue 1px solid;
+}

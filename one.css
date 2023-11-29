@@ -21,6 +21,8 @@ header {
 	height: 5vh;
 	width: 100%;
 	top: 0;
+	border-bottom: rgb(0, 0, 0) 1px solid;
+
 }
 
 footer {
@@ -29,6 +31,8 @@ footer {
 	height: 5vh;
 	width: 100%;
 	bottom: 0;
+	border-top: rgb(0, 0, 0) 1px solid;
+
 }
 
 .main_square {
@@ -80,19 +84,20 @@ footer {
 }
 
 .glass {
-	height: 5rem;
-	width: 5rem;
+	position: relative;
+	height: 2rem;
+	width: 2rem;
 	border: 2px solid rgba(0, 0, 0, 0.4);
-	background-color: rgba(233, 14, 14, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .glass::before {
 	content: "";
 	position: absolute;
-	height: 4.5rem;
-	width: 4.5rem;
-	/* margin: auto; */
-	/* inset: 0; */
+	height: 1.75rem;
+	width: 1.75rem;
+	margin: auto;
+	inset: 0;
 	background-color: rgb(93, 127, 59);
 }
 
