@@ -10,8 +10,9 @@ body {
 .arc {
 	background-color: rgb(189, 173, 116);
 }
+
 .arc {
-	background-color: rgb(113,111,77);
+	background-color: rgb(113, 111, 77);
 }
 
 .circle {
@@ -22,7 +23,7 @@ body {
 		repeating-linear-gradient(0deg, green, transparent, blue 90%, transparent);
 	border-radius: 20rem 20rem 0 0;
 	transform-origin: bottom center;
-	border: rgb(101, 228, 228) 11px dotted ;
+	border: rgb(101, 228, 228) 11px dotted;
 	margin-left: -5%;
 	border-bottom: transparent;
 	animation: half-round 60s infinite linear;
@@ -33,7 +34,7 @@ body {
 	position: absolute;
 	width: 85%;
 	height: 85%;
-	background-color: rgb(218,174,110);
+	background-color: rgb(218, 174, 110);
 	border-radius: 20rem 20rem 0 0;
 	inset: 0;
 	margin: auto;
@@ -61,5 +62,10 @@ body {
 	inset: 0;
 	margin: auto;
 	margin-top: 45%;
-box-shadow: 0 0 10px black inset;
+	box-shadow: 0 0 10px black inset;
+}
+
+header,
+footer {
+	background: rgb(214, 147, 22);
 }

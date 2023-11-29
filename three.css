@@ -1,14 +1,14 @@
 body {
 	background: rgb(26, 26, 26);
-position: relative;	
-min-height: 100vh;
+	position: relative;
+	min-height: 100vh;
 }
 
 .square {
 	display: flex;
 	position: absolute;
 	border-radius: 5px;
-	height: 80vh;
+	height: 80%;
 	align-items: center;
 	aspect-ratio: 3/2;
 	margin: auto;
@@ -18,7 +18,7 @@ min-height: 100vh;
 
 .circle {
 	position: absolute;
-	height: 20rem;
+	height: 60%;
 	aspect-ratio: 1;
 	box-shadow: 20px 20px 50px rgba(182, 179, 136, 0.5) inset, 50px 50px 50px rgba(69, 68, 47, 0.5) inset, 100px 100px 50px rgba(42, 43, 23, 0.5) inset;
 	border-radius: 50%;
@@ -32,11 +32,13 @@ min-height: 100vh;
 .star {
 	position: absolute;
 	clip-path: polygon(30% 0%, 58% 40%, 100% 30%, 63% 55%, 70% 100%, 45% 60%, 0% 70%, 40% 45%);
-	height: 5rem;
+	height: 5%;
 	aspect-ratio: 1;
-	background-color: blueviolet;
+	right: 28%;
+	background-color: rgba(137, 43, 226, 0.707);
 	border: rgb(183, 0, 255) 20px solid;
 	animation: star 3s infinite linear;
+	z-index: 10;
 }
 
 @keyframes star {
@@ -49,4 +51,9 @@ min-height: 100vh;
 		transform: rotate(360deg);
 	}
 
+}
+
+header,
+footer {
+	background: rgb(0, 0, 0);
 }

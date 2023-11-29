@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora:ital,wght@1,500&family=Notable&display=swap&familyFredericka+the+Great&family=Inter:wght@500&family=Lora:ital,wght@1,500&family=Noto+Sans+Symbols&family=Rubik+Glitch&family=Open+Sans&family=Roboto&family=Oswald&family=Playfair+Display&display=swap&family=Alumni+Sans+Collegiate+One&display=swap');
+
+:root {
+	--logoBG: radial-gradient(rgba(213, 210, 255, 0.8) 10%, rgba(6, 163, 184, 0.884) 25%, black 60%);
+}
+
+
 *,
 ::before,
 ::after {
@@ -10,11 +17,14 @@
 html {
 	scroll-behavior: smooth;
 	min-height: 100vh;
-	font-family: "Mulish", sans-serif;
+	font-family: "Lora", sans-serif;
+	font-size: 40px;
 }
 
 nav {
 	display: flex;
+	margin-left: 1rem;
+	height: 5vh;
 }
 
 a {
@@ -22,7 +32,51 @@ a {
 	margin-top: 10px;
 	height: 15px;
 	width: 15px;
+	z-index: 10;
 	background: rgb(185, 191, 115);
 	border-radius: 50%;
-	border: rgb(79, 81, 48) 3px solid;
+	border: rgb(79, 81, 48) 2px solid;
+	transition: .2s all;
+}
+
+a:hover {
+	background: rgb(140, 148, 241);
+	border: rgb(0, 0, 0) 5px solid;
+}
+
+a:visited {
+	border: 3px solid rgb(0, 0, 0);
+	background: rgb(79, 81, 48);
+}
+
+nav .active {
+	border: 2px solid rgb(0, 0, 0);
+	background: rgb(228, 229, 206);
+}
+
+header {
+	position: absolute;
+	background: rgb(178, 184, 4);
+	height: 5vh;
+	width: 100%;
+	top: 0;
+}
+
+footer {
+	position: absolute;
+	background: rgb(178, 184, 4);
+	height: 5vh;
+	width: 100%;
+	bottom: 0;
+}
+
+@keyframes around {
+
+	100% {
+		rotate: y 360deg;
+	}
+}
+
+.intro {
+	margin: 1rem;
 }

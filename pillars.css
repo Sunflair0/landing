@@ -1,0 +1,189 @@
+body {
+	background-color: rgb(26, 5, 61);
+	background-image:
+		linear-gradient(45deg, hsla(303, 100%, 50%, 0.25), hsla(253, 100%, 50%, 0.25), hsla(55, 100%, 50%, 0.25)),
+		repeating-linear-gradient(90deg, black 0 3px, rgba(255, 255, 255, 0.405) 4px 5px, transparent 5px 45px);
+}
+
+header,
+footer {
+	background: rgb(10, 8, 27);
+}
+
+header {
+	height: 24vh;
+}
+
+article {
+	position: absolute;
+	width: calc(100% - 5.5rem);
+	height: 24px;
+	top: 1.5rem;
+	right: 0;
+	background-color: rgba(62, 11, 150, 0.5);
+	background-image: radial-gradient(rgb(163, 163, 239) 0 2px, transparent 2px 4px, rgba(89, 229, 244, 0.36) 12px 20px), repeating-linear-gradient(90deg, transparent 0 10px, rgb(0, 0, 0) 10px 14px);
+	background-size: 24px 24px;
+}
+
+.logoscene {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	border: 1px rgba(158, 218, 242, 0.6) solid;
+	outline: 2px solid rgba(154, 77, 153, 0.7);
+	outline-offset: 3px;
+	width: clamp(150px, 0.5vw, 25%);
+	height: 30vh;
+	margin-left: 0.25rem;
+	top: 0;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+	perspective-origin: 50% calc(50% - 300px);
+	scale: .5;
+}
+
+.logocube {
+	position: absolute;
+	top: 5vh;
+	height: 2rem;
+	width: 2rem;
+	transform-style: preserve-3d;
+	animation: around 3s infinite linear;
+
+	@media only screen and (max-width: 150px) {
+		scale: .5;
+	}
+}
+
+.logoball {
+	height: 100%;
+	width: 100%;
+	scale: .8;
+	border-radius: 50%;
+	animation: around 3s infinite linear reverse;
+	background: radial-gradient(circle at 100% 50%, rgb(7, 126, 181), rgb(86, 145, 218), transparent),
+		radial-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 0, 0.155)),
+		linear-gradient(rgb(0, 0, 198), rgb(109, 209, 242));
+}
+
+.logoball::before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	scale: .85;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 30%, rgb(215, 252, 255) 20%, transparent 20%),
+		radial-gradient(rgba(143, 194, 209, 0.9), rgba(48, 48, 1, 0.5)),
+		radial-gradient(rgb(91, 153, 194) 40%, rgb(34, 154, 170) 45%, rgb(70, 70, 216) 60%);
+	filter: blur(6px);
+	animation: none;
+}
+
+.logo {
+	display: flex;
+	position: absolute;
+	background: var(--logoColor);
+	height: 7vh;
+	width: 100%;
+	bottom: .25rem;
+	background-size: 10px 10px;
+}
+
+.inside {
+	display: flex;
+	position: absolute;
+	border-radius: 10%;
+	outline: hsla(245, 65%, 65%, 0.65) 1px solid;
+	outline-offset: -1px;
+	width: 95%;
+	height: 75%;
+	background: rgba(73, 60, 105, 0.3);
+	background-image: repeating-linear-gradient(90deg, rgba(12, 12, 12, 0.4) 0 2px, rgba(50, 81, 111, 0.12) 2px 4px, transparent 4px 40px),
+		repeating-linear-gradient(hsla(245, 53%, 17%, 0.3) 0px 1px, transparent 2px 16px);
+	border: 2px solid rgba(200, 196, 242, 0.2);
+	margin: auto;
+	inset: 0;
+	filter: brightness(150%);
+	box-shadow: 2px 2px 2px black,
+		inset -2px -2px 2px rgba(34, 16, 6, 0.5), ew inset 3px 3px 2px rgba(2, 81, 80, 0.5);
+}
+
+.left {
+	right: 1rem;
+	rotate: y -90deg;
+}
+
+.right {
+	left: 1rem;
+	rotate: y 90deg;
+}
+
+.top {
+	bottom: 1rem;
+	rotate: x 90deg;
+	background: hwb(181 58% 0% / 0.15);
+}
+
+.bottom {
+	top: 1rem;
+	rotate: x -90deg;
+	background: rgba(21, 141, 141, 0.271);
+}
+
+.front {
+	translate: 0 0 1rem;
+	transform-style: preserve-3d;
+}
+
+.back {
+	translate: 0 0 -1rem;
+}
+
+.stone {
+	position: absolute;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 5px;
+	background: linear-gradient(-40deg, rgba(65, 220, 220, 0.15) 10%, transparent 40%, transparent 60%, rgba(0, 128, 128, 0.15)) 90%,
+		linear-gradient(40deg, rgba(65, 220, 220, 0.15) 10%, transparent 40%, transparent 60%, rgba(0, 128, 128, 0.15)) 90%;
+	outline: 3px rgb(0, 0, 0) solid;
+	outline-offset: -3px;
+	box-shadow: inset 2px 2px 1px rgba(184, 10, 228, 0.553),
+		inset -2px -2px 1px rgba(7, 189, 165, 0.5);
+	background-image: hsla(245, 53%, 17%, 0.3);
+	border: 2px solid rgb(29, 220, 134);
+	transition: .3s all;
+}
+
+.stone::before {
+	content: '';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: hsla(201, 68%, 10%, 0.159);
+	border-radius: 5px;
+}
+
+.words {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #8c878ca7;
+	bottom: 0;
+	width: 100%;
+	font-family: 'Times New Roman', Times, serif;
+	-webkit-text-stroke: 2px hsla(0, 0%, 0%, 0.75);
+	text-shadow: 3px 3px 1px rgb(164, 175, 255);
+	-webkit-background-clip: text;
+	font-size: 16px;
+	letter-spacing: 2px;
+	z-index: 2;
+}
+
+.placement {
+	top: 13vh;
+	font-size: 80px;
+}

@@ -1,0 +1,9 @@
+body {
+	background-color: rgb(131, 139, 88);
+	color: aliceblue;
+}
+
+header,
+footer {
+	background: rgb(0, 0, 0);
+}

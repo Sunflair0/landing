@@ -1,0 +1,12 @@
+body {
+	background-color: rgb(250, 229, 166);
+}
+
+header,
+footer {
+	background: rgb(157, 10, 103);
+}
+
+.color {
+	background: rgb(250, 229, 166);
+}
