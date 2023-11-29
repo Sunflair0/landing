@@ -28,20 +28,14 @@ nav {
 }
 
 a {
-	margin-left: 10px;
-	margin-top: 10px;
-	height: 15px;
-	width: 15px;
+	height: clamp(7px, 2vh, 15px);
+	aspect-ratio: 1;
 	z-index: 10;
+	margin: auto 10px;
 	background: rgb(185, 191, 115);
 	border-radius: 50%;
 	border: rgb(79, 81, 48) 2px solid;
-	transition: .2s all;
-}
-
-a:hover {
-	background: rgb(140, 148, 241);
-	border: rgb(0, 0, 0) 5px solid;
+	transition: .07s all;
 }
 
 a:visited {
@@ -51,7 +45,12 @@ a:visited {
 
 nav .active {
 	border: 2px solid rgb(0, 0, 0);
-	background: rgb(228, 229, 206);
+	background: aliceblue;
+}
+
+a:hover {
+	background: aliceblue;
+	border: rgb(0, 0, 0) 5px solid;
 }
 
 header {
@@ -60,6 +59,7 @@ header {
 	height: 5vh;
 	width: 100%;
 	top: 0;
+	z-index: 1;
 }
 
 footer {

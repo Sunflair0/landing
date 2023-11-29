@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(31, 9, 52);
+	background-color: rgb(13, 2, 23);
 	background-image: url(assets/stars.png);
 	background-size: cover;
 }
@@ -8,7 +8,7 @@ body::before {
 	content: "";
 	background-image: url(assets/streaks.png);
 	background-size: cover;
-	opacity: .1;
+	opacity: .15;
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -27,7 +27,7 @@ body::before {
 	right: 0;
 	bottom: 0;
 	position: fixed;
-	filter: drop-shadow(0px 0px 20px #ff0617b4);
+	filter: drop-shadow(0px 0px 20px #833302b4);
 }
 
 header,
@@ -45,3 +45,15 @@ footer {
 	background-image: url(assets/STbrand.png);
 	background-size: contain;
 }
+
+/* #comets {
+  width: 250px;
+  height: 150px;
+  position:absolute;
+  border-radius: 5% 40% 70%;
+  box-shadow: inset 0px 0px 100px #294b67;
+  border: 1px solid #333;
+  z-index: 1;
+  background-color: #fff;
+  opacity: .7;
+} */
