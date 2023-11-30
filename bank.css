@@ -147,7 +147,7 @@ footer {
 	content: "";
 	height: 0;
 	width: 100%;
-	background-color: aqua;
+	background-color: rgb(96, 215, 215);
 	position: absolute;
 	transition: height .3s;
 }
