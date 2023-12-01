@@ -1,5 +1,6 @@
 body {
 	background-color: rgba(196, 171, 135, 0.592);
+	background-color: rgb(0, 0, 0);
 	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
@@ -16,12 +17,15 @@ body {
 	width: 90%;
 	transform: translateZ(10px);
 	margin: auto;
-	transform-style: preserve-3d;
-	background: linear-gradient(rgba(238, 227, 80, 0.7), rgba(190, 182, 117, 0.7), rgba(255, 255, 255, 0.7));
 	inset: 0;
+	background: linear-gradient(rgb(255, 244, 97), rgb(190, 181, 117), rgb(255, 255, 255));
+	background-image: repeating-radial-gradient(rgb(0, 0, 0), transparent);
+	background-size: 5px 5px;
+
 }
 
 .blob1 {
+/* https://9elements.github.io/fancy-border-radius/ */
 	display: flex;
 	position: relative;
 	height: 20rem;

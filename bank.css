@@ -2,6 +2,7 @@ body {
 	background: linear-gradient(145deg, rgb(131, 139, 88) 20%, white 60%);
 	overflow-x: hidden;
 	color: aliceblue;
+	background-repeat: no-repeat;
 	background-size: cover;
 }
 
@@ -134,8 +135,8 @@ footer {
 
 .bottom_card {
 	background: linear-gradient(aliceblue, rgb(168, 177, 113));
-	height: 7rem;
-	width: 5rem;
+	width: clamp(3rem, 2vw, 7rem);
+	aspect-ratio: 5/7;
 	border-radius: 10px;
 	border: aliceblue 5px solid;
 	outline: 3px solid rgb(168, 177, 113);
@@ -147,7 +148,7 @@ footer {
 	content: "";
 	height: 0;
 	width: 100%;
-	background-color: rgb(96, 215, 215);
+	background: linear-gradient(rgb(96, 215, 215), rgb(32, 145, 145));
 	position: absolute;
 	transition: height .3s;
 }

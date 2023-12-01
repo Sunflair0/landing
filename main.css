@@ -79,4 +79,5 @@ footer {
 
 .intro {
 	margin: 1rem;
+	isolation: isolate;
 }
