@@ -2,12 +2,13 @@ body {
 	background-color: rgb(13, 2, 23);
 	background-image: url(assets/stars.png);
 	background-size: cover;
+	color: rgb(176, 187, 123);
 }
 
 body::before {
 	content: "";
 	background-image: url(assets/streaks.png);
-	background-size: cover;
+	background-size: 100%;
 	opacity: .15;
 	position: absolute;
 	height: 100%;
@@ -27,7 +28,7 @@ body::before {
 	right: 0;
 	bottom: 0;
 	position: fixed;
-	filter: drop-shadow(0px -2px 5px hsla(0, 89%, 78%, 0.5)) drop-shadow(0px -4px 10px hsla(0, 100%, 50%, 0.5)) drop-shadow(10px -10px 10px hsla(6, 86%, 65%, 0.15)) drop-shadow(-20px -35px 11px hsla(263, 96%, 26%, 0.06)) drop-shadow(100px -35px 3px hsla(263, 96%, 26%, 0.25)) drop-shadow(0px -35px 5px hsla(0, 100%, 50%, 0.1))
+	filter: drop-shadow(0px -1px 5px hsla(0, 100%, 36%, 1)) drop-shadow(0px -2px 5px hsla(0, 89%, 78%, 0.1)) drop-shadow(0px -4px 10px hsla(0, 100%, 50%, 0.5)) drop-shadow(10px -10px 10px hsla(6, 86%, 65%, 0.15)) drop-shadow(-20px -35px 11px hsla(263, 96%, 26%, 0.06)) drop-shadow(100px -35px 3px hsla(263, 96%, 26%, 0.25)) drop-shadow(0px -35px 5px hsla(0, 100%, 50%, 0.1))
 }
 
 header,
@@ -36,9 +37,8 @@ footer {
 }
 
 .logo {
-
-	min-width: fit-content;
-	height: 2rem;
+	height: 1rem;
+	margin: .5rem;
 	aspect-ratio: 87/20;
 	background-image: url(assets/STbrand.png);
 	background-size: contain;
@@ -59,22 +59,40 @@ footer {
 
 .shell {
 	display: flex;
-	height: 100vh;
+	height: 81vh;
+	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
 
 .hero {
 	display: flex;
-	align-items: center;
+	max-width: 50%;
 	flex-direction: column;
-	border: 2px solid white;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+	border-radius: 10px;
+	padding: 20px;
+border: 2px solid rgb(93, 84, 220);
+outline: 2px solid rgb(93, 84, 220);
+outline-offset: -5px;
+}
+
+.hero_content {
+	height: 5rem;
+	padding: 10px;
+	font-size: medium;
+}
+
+.button {
+	background-color: #e2581800;
 }
 
 .but2 {
 	border: 1px solid var(--pulse);
-	color: var(--pulse);
+	/* color: var(--pulse); */
 	border-radius: 10px;
+	color: rgb(105, 167, 181);
 	height: 50px;
 	width: 150px;
 	margin-top: 10%;
