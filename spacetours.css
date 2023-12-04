@@ -1,14 +1,14 @@
 body {
-	background-color: rgb(13, 2, 23);
+	background-color: rgb(12, 3, 21);
 	background-image: url(assets/stars.png);
 	background-size: cover;
-	color: rgb(176, 187, 123);
+	color: #e21dc2;
 }
 
 body::before {
 	content: "";
 	background-image: url(assets/streaks.png);
-	background-size: 100%;
+	background-size: cover;
 	opacity: .15;
 	position: absolute;
 	height: 100%;
@@ -20,7 +20,7 @@ body::before {
 	height: 1000px;
 	width: 1000px;
 	clip-path: circle(200% at 110% 287%);
-	background: linear-gradient(168deg, #e25818 89%, #f0a53c 93%, #f5ce1d 97%);
+	background: linear-gradient(168deg, rgb(247, 239, 98) 85%, rgb(206, 218, 141) 94%);
 	z-index: 0;
 }
 
@@ -28,7 +28,7 @@ body::before {
 	right: 0;
 	bottom: 0;
 	position: fixed;
-	filter: drop-shadow(0px -1px 5px hsla(0, 100%, 36%, 1)) drop-shadow(0px -2px 5px hsla(0, 89%, 78%, 0.1)) drop-shadow(0px -4px 10px hsla(0, 100%, 50%, 0.5)) drop-shadow(10px -10px 10px hsla(6, 86%, 65%, 0.15)) drop-shadow(-20px -35px 11px hsla(263, 96%, 26%, 0.06)) drop-shadow(100px -35px 3px hsla(263, 96%, 26%, 0.25)) drop-shadow(0px -35px 5px hsla(0, 100%, 50%, 0.1))
+	filter: drop-shadow(0px -3px 5px rgba(184, 104, 0, 0.1)) drop-shadow(0px -13px 5px hsla(0, 100%, 50%, 0.2)) drop-shadow(0px -14px 10px hsla(0, 98%, 18%, 0.297)) drop-shadow(10px -10px 10px hsla(6, 81%, 79%, 0.15)) drop-shadow(-20px -35px 11px hsla(263, 96%, 26%, 0.06)) drop-shadow(100px -35px 3px hsla(263, 96%, 26%, 0.25)) drop-shadow(0px -35px 5px hsla(0, 100%, 50%, 0.1))
 }
 
 header,
@@ -36,14 +36,6 @@ footer {
 	background: rgb(0, 0, 0);
 }
 
-.logo {
-	height: 1rem;
-	margin: .5rem;
-	aspect-ratio: 87/20;
-	background-image: url(assets/STbrand.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
 
 /* #comets {
   width: 250px;
@@ -59,44 +51,131 @@ footer {
 
 .shell {
 	display: flex;
-	height: 81vh;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	position: relative;
+	height: 90vh;
+	width: 55%;
+	/* align-items: center; */
+	/* justify-content: space-around; */
+	top: 0vh;
 }
 
 .hero {
 	display: flex;
-	max-width: 50%;
+	position: absolute;
+	width: 95%;
+	height: 80vh;
 	flex-direction: column;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1;
+	margin: auto;
+	inset: 0;
 	border-radius: 10px;
 	padding: 20px;
-border: 2px solid rgb(93, 84, 220);
-outline: 2px solid rgb(93, 84, 220);
-outline-offset: -5px;
+}
+
+.logo {
+	position: absolute;
+	height: clamp(.5rem, 5.2vw, .75rem);
+	top: 15vh;
+	position: relative;
+	margin: auto;
+	aspect-ratio: 87/20;
+	background-image: url(assets/STbrand.png);
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .hero_content {
-	height: 5rem;
-	padding: 10px;
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	height: 12rem;
+	padding: 0 10px;
 	font-size: medium;
 }
 
-.button {
+.ship {
+	/* display: flex; */
+	position: absolute;
+	top: 21vh;
+	width: 200px;
+	aspect-ratio: 1;
+	right: 7%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(assets/shi.png);
+	animation: float 3s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+	90% {
+		transform: translate(0px, -2px);
+		animation-timing-function: step-end;
+		scale: 1.01;
+	}
+}
+
+.biggest {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	inset: 0;
+	top: 18vh;
+	margin: auto;
+	height: 11vh;
+	width: clamp(400px, 28.5vw, 35%);
+}
+
+svg {
+	width: max-content;
+	position: absolute;
+	stroke: #ad77f8;
+	stroke-width: 0.5mm;
+	fill: url('#gradient');
+	bottom: 0;
+	height: 10vh;
+	margin: auto;
+}
+
+.svg_words {
+	width: 70px;
+	position: absolute;
+	font-style: italic;
+	font-size: 20px;
+	font-weight: 700;
+margin-left: .5rem;
+	font-family: Times, serif;
+	bottom: -.15rem;
+	right: -1rem;
+}
+
+.smaller {
+	position: absolute;
+	bottom: 15vh;
+}
+
+h1 {
+	font-size: 42px;
+	font-family: "Notable", Georgia, 'Times New Roman', Times, serif;
+	font-family: 'Dancing Script', cursive;
+}
+
+.buttons {
+	position: absolute;
+	bottom: 0;
 	background-color: #e2581800;
 }
 
 .but2 {
 	border: 1px solid var(--pulse);
-	/* color: var(--pulse); */
+	color: var(--pulse);
 	border-radius: 10px;
+	margin-right: 10px;
+	cursor: pointer;
 	color: rgb(105, 167, 181);
-	height: 50px;
-	width: 150px;
-	margin-top: 10%;
-	font-size: clamp(10px, 1.6vw, 36px);
+	width: clamp(100px, 16vh, 120px);
+	aspect-ratio: 3/1;
+	font-size: clamp(14px, 1.6vw, 18px);
 	background: linear-gradient(15deg,
 			hsla(198, 93%, 47%, 0.3) 65%,
 			transparent 75%,
@@ -128,4 +207,9 @@ outline-offset: -5px;
 		inset -5px 5px 2px rgba(134, 129, 218, 0.578),
 		inset 5px -5px 2px rgba(134, 129, 218, 0.578);
 	transition: .2s ease-out all;
+}
+
+#imagination {
+	font-family: 'Dancing Script', cursive;
+	font-size: 52px;
 }
