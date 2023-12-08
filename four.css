@@ -1,0 +1,7 @@
+body {
+background-color: rgb(220, 190, 253);
+}
+
+header, footer {
+background: linear-gradient(rgb(237, 95, 147), rgb(244, 72, 244));
+} 

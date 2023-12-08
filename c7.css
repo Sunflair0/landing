@@ -1,0 +1,91 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+
+html {
+	scroll-behavior: smooth;
+	min-height: 100vh;
+	font-family: "Lora", sans-serif;
+	font-size: 40px;
+}
+
+body {
+	background-color: bisque;
+}
+
+.bigbox {
+	display: flex;
+	width: 80vw;
+	height: 30vh;
+	border: 2px solid black;
+	margin: auto;
+	background-color: aqua;
+	align-items: center;
+	justify-content: space-around;
+
+}
+
+.cOne,
+.cTwo,
+.cThree {
+	width: 150px;
+	height: 150px;
+	border: 2px solid green;
+	justify-content: center;
+
+}
+
+.cOne {
+	display: flex;
+	background-color: brown;
+	justify-content: center;
+	align-items: center;
+}
+
+.cThree {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.bigbox .cTwo {
+
+	background-image: linear-gradient(yellow, green);
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+}
+
+.b1,
+.b2,
+.b3 {
+	height: 25px;
+	width: 25px;
+	border: 2px blue solid;
+	background-image: linear-gradient(rgb(0, 166, 255), rgb(128, 0, 66));
+
+}
+
+.james {
+
+	width: 101px;
+	height: 101px;
+	background-color: black;
+	border-radius: 50%;
+	
+}
+
+.star {
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	height: 100px;
+	width: 100px;
+	background-color: gold;
+	justify-content: center;
+
+}
