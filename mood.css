@@ -8,22 +8,6 @@ body {
 	transform-style: preserve-3d;
 }
 
-.square {
-	display: flex;
-	position: absolute;
-	border-radius: 10px;
-	border: 6px double rgba(255, 174, 52, 0.695);
-	height: 85vh;
-	width: 90%;
-	transform: translateZ(10px);
-	margin: auto;
-	inset: 0;
-	background: linear-gradient(rgb(255, 244, 97), rgb(190, 181, 117), rgb(255, 255, 255));
-	background-image: repeating-radial-gradient(rgb(0, 0, 0), transparent);
-	background-size: 5px 5px;
-
-}
-
 .blob1 {
 /* https://9elements.github.io/fancy-border-radius/ */
 	display: flex;
@@ -141,3 +125,42 @@ body {
 	}
 
 }
+
+
+.square {
+	position: absolute;
+	border-radius: 10px;
+	border: 6px double rgba(255, 174, 52, 0.7);
+	height: 85vh;
+	width: 90%;
+	transform: translateZ(10px);
+	margin: auto;
+	inset: 0;
+padding: 10px;
+	background: linear-gradient(rgb(255, 244, 97), rgb(190, 181, 117), rgb(255, 255, 255));
+	background-image: repeating-radial-gradient(rgb(0, 0, 0), transparent);
+	background-size: 5px 5px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+}
+
+.square>div {
+border: 2px solid rgb(255, 174, 52);
+border-radius: 10px;
+background-color: rgba(244, 193, 131, 0.5);
+}
+
+.div1 { grid-area: 1 / 1 / 3 / 2; }
+.div2 { grid-area: 3 / 1 / 4 / 2; }
+.div3 { grid-area: 1 / 2 / 2 / 3; }
+.div4 { grid-area: 1 / 3 / 2 / 4; }
+.div5 { grid-area: 1 / 4 / 2 / 5; }
+.div6 { grid-area: 2 / 2 / 4 / 3; }
+.div7 { grid-area: 3 / 3 / 4 / 4; }
+.div8 { grid-area: 4 / 3 / 5 / 4; }
+.div9 { grid-area: 3 / 4 / 5 / 5; }
+.div10 { grid-area: 2 / 3 / 3 / 5; }
+.div11 { grid-area: 4 / 1 / 5 / 3; }

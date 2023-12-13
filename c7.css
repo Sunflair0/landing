@@ -37,7 +37,6 @@ body {
 	height: 150px;
 	border: 2px solid green;
 	justify-content: center;
-
 }
 
 .cOne {
@@ -47,19 +46,33 @@ body {
 	align-items: center;
 }
 
+.star {
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	height: 100px;
+	width: 100px;
+	background-color: gold;
+	justify-content: center;
+}
+
+.bigbox .cTwo {
+	background-image: linear-gradient(yellow, green);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.james {
+	width: 101px;
+	height: 101px;
+	background-color: black;
+	border-radius: 50%;
+}
+
 .cThree {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-}
-
-.bigbox .cTwo {
-
-	background-image: linear-gradient(yellow, green);
-	display: flex; 
-	align-items: center;
-	justify-content: center;
 }
 
 .b1,
@@ -69,23 +82,4 @@ body {
 	width: 25px;
 	border: 2px blue solid;
 	background-image: linear-gradient(rgb(0, 166, 255), rgb(128, 0, 66));
-
-}
-
-.james {
-
-	width: 101px;
-	height: 101px;
-	background-color: black;
-	border-radius: 50%;
-	
-}
-
-.star {
-	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-	height: 100px;
-	width: 100px;
-	background-color: gold;
-	justify-content: center;
-
 }
