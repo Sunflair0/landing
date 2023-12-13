@@ -148,9 +148,11 @@ body {
 .square>div {
 	border: 2px solid rgb(255, 174, 52);
 	border-radius: 10px;
-	background: rgba(184, 162, 73, 0.75);
-padding: 5px;
-	transition: .3s all;
+background: rgba(184, 162, 73, 0.75);
+	background-image: radial-gradient(rgb(183, 170, 116),rgba(184, 162, 73, 0.75));
+	box-shadow: 0 0 10px 1px black inset, 0 0 20px  rgba(224, 62, 62, 0.5) inset;
+	padding: 5px;
+	transition: .5s all;
 }
 
 .div5:hover,
@@ -165,7 +167,7 @@ padding: 5px;
 .div3:hover,
 .div4:hover {
 	border: 2px solid rgb(52, 255, 177);
-	background: repeating-linear-gradient(-50deg, rgba(73, 162, 184, 0.75) 0 15px,rgba(184, 162, 73, 0.75) 15px 45px, rgba(73, 162, 184, 0.75) 45px 60px);
+	background: repeating-linear-gradient(-50deg, rgba(73, 162, 184, 0.75) 0 15px, rgba(219, 193, 86, 0.75) 15px 45px, rgba(73, 162, 184, 0.75) 45px 60px);
 }
 
 /* https://cssgrid-generator.netlify.app/ */
