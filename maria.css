@@ -1,8 +1,183 @@
-body {
-background-color: rgb(186, 248, 155);
+a {
+z-index: 100;
 }
 
-nav {
-background-color: linear-gradient(pink, purple);
+header,
+footer {
+	background: none;
+z-index: 1;
+}
 
-} 
+body {
+	background-color: rgb(0, 0, 0);
+	background-image: url("/assets/star.jpg"), url("/assets/daywaterfrag.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+overflow: hidden;
+}
+
+.stars {
+	background-color: rgb(0, 0, 0);
+	background-image: url("/assets/star.jpg");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: rotator 60s linear infinite;
+}
+
+@keyframes rotator {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	position: relative;
+	height: 100svh;
+top:  -5vh;
+}
+
+.backround_fade {
+	position: absolute;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+/* top: -5vh; */
+	height: 100%;
+	width: 100%;
+	animation: bg_fade 90s infinite alternate linear;
+	z-index: 3;
+}
+
+.shooting_star {
+	height: 28px;
+	margin-left: 38vh;
+	margin-top: -1vh;
+	transform-origin: 0 0;
+	rotate: 289deg;
+	color: rgba(252, 228, 208, 0.25);
+	box-shadow: 0px 0px .3px .1px;
+	position: absolute;
+	animation: shooting 30s infinite ease-in;
+}
+
+@keyframes shooting {
+	0% {
+		opacity: 1;
+		transform: translate(0%, 0%);
+		scale: .6;
+	}
+
+	.1% {
+		opacity: 1;
+		scale: 3;
+	}
+
+	.2% {
+		opacity: .8;
+		scale: 4;
+	}
+
+	.3% {
+		background-color: rgb(241, 190, 190);
+		opacity: .6;
+		scale: 6;
+	}
+
+	.4% {
+		background-color: rgb(0, 0, 0);
+		opacity: .5;
+		scale: 7;
+	}
+
+	.5% {
+		opacity: .4;
+		scale: 8;
+	}
+
+	.6% {
+		opacity: .2;
+	}
+
+	1% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(-100%, 100%);
+	}
+}
+
+.sparkle {
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	background-image: url("/assets/daywaterfrag.png");
+	z-index: 10;
+	filter: url("#sparkle");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: sparkle 90s infinite alternate ease;
+}
+
+svg {
+	width: 0;
+	height: 0;
+}
+
+@keyframes bg_fade {
+
+	0% {
+		background-image: url("/assets/day.png");
+	}
+
+	35% {
+		background-image: url("/assets/day.png");
+	}
+
+	65% {
+		background-image: url("/assets/castleNight.png");
+		;
+	}
+
+	100% {
+		background-image: url("/assets/castleNight.png");
+		;
+	}
+
+}
+
+@keyframes sparkle {
+
+	0% {
+		background-image: url("/assets/daywaterfrag.png");
+	}
+
+	35% {
+		background-image: url("/assets/daywaterfrag.png");
+	}
+
+	65% {
+		background-image: url("/assets/nitewaterfrag.png");
+		;
+	}
+
+	100% {
+		background-image: url("/assets/nitewaterfrag.png");
+		;
+	}
+
+}

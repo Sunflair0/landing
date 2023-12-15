@@ -148,11 +148,12 @@ body {
 .square>div {
 	border: 2px solid rgb(255, 174, 52);
 	border-radius: 10px;
-background: rgba(184, 162, 73, 0.75);
-	background-image: radial-gradient(rgb(183, 170, 116),rgba(184, 162, 73, 0.75));
-	box-shadow: 0 0 10px 1px black inset, 0 0 20px  rgba(224, 62, 62, 0.5) inset;
+	background: rgba(184, 162, 73, 0.75);
+	background-image: radial-gradient(rgb(183, 170, 116), rgba(184, 162, 73, 0.75));
+	box-shadow: 0 0 10px 1px black inset, 0 0 20px rgba(224, 62, 62, 0.5) inset;
 	padding: 5px;
 	transition: .5s all;
+	font-size: medium;
 }
 
 .div5:hover,
