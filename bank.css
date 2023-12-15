@@ -1,5 +1,5 @@
 body {
-	background: linear-gradient(145deg, rgb(70, 74, 48) 20%, rgb(4, 2, 26) 60%);
+	background: linear-gradient(145deg, rgb(94, 101, 56) 20%, rgb(4, 2, 26) 60%);
 	overflow-x: hidden;
 	color: aliceblue;
 	background-repeat: no-repeat;
@@ -34,24 +34,38 @@ footer {
 	border-top: aqua 1px solid;
 }
 
+.motto {
+	display: flex;
+	position: absolute;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	right: 1rem;
+	background-color: rgb(0, 0, 0);
+	justify-content: center;
+	top: 10vh;
+	width: 50%;
+	border: 2px solid rgb(176, 176, 176);
+}
+
 .circle {
 	display: flex;
-	position: relative;
+	position: sticky;
 	border-radius: 50%;
+	top: 6.5vh;
 	margin-top: 3rem;
-	margin-left: 20%;
+	margin-left: 10%;
 	justify-content: center;
 	flex-direction: column;
 	background: rgb(168, 177, 113);
 	height: 7rem;
-	box-shadow: inset 0 0 100px rgb(25, 31, 0);
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.745), inset 0 0 150px rgb(70, 82, 24);
 	aspect-ratio: 1;
 	z-index: 1;
 }
 
 .intro1 {
-	display: flex;
 	position: absolute;
+	top: 30%;
+	left: 5px;
 	font-size: 60px;
 	filter: drop-shadow(5px 5px 2px rgb(48, 51, 32));
 	transform: skew(350deg);
@@ -70,7 +84,7 @@ footer {
 .intro2 {
 	position: absolute;
 	text-align: right;
-	top: 0;
+	bottom: 50%;
 	filter: drop-shadow(4px 4px 1px rgb(33, 39, 5));
 	width: 85%;
 	height: 20px;
@@ -107,50 +121,45 @@ footer {
 	width: 50%;
 }
 
-.PyTopBottom {
-width: 50%;
-	/* border: 2px solid green; */
-
-}
-
 .pyramid {
-	clip-path: polygon(49.5% 0%, 0% 100%, 100% 100%);
+	clip-path: polygon(48.6% 0%, 0 80%, 41% 100%);
 	position: absolute;
-	background: linear-gradient(98.5deg, rgb(208, 215, 160) 46%, rgb(0, 0, 0) 46%);
 	width: 20rem;
 	height: 10rem;
-right: -10vw;
+	background-color: rgb(208, 215, 160);
+	right: -10vw;
 	z-index: 1;
 	bottom: -3rem;
-z-index: 100;
+	z-index: 100;
 }
 
-.py_base {
-content: "";
-	clip-path: polygon(40% 0%, 0% 100%, 100% 100%);
+.pyramid2 {
+	content: "";
+	clip-path: polygon(50% 0%, 91% 84%, 42% 100%);
 	position: absolute;
-	background: linear-gradient(82deg, rgb(208, 215, 160) 40.8%, rgb(0, 0, 0) 40.9%);
 	width: 20rem;
-	height: 2.5rem;
-	z-index: 200;
-	bottom: -5.49rem;
-	rotate: x 180deg;
-right: -10.5vw;
+	height: 10rem;
+	background-color: rgb(4, 3, 21);
+	right: -9vw;
+	z-index: 1;
+	bottom: -3rem;
+	z-index: 100;
 }
 
 .reflect {
-    opacity: .5;
-    rotate: x 180deg;
-    filter: blur(0px);
-    margin-bottom: -10rem;
-    background: rgba(0, 0, 0, 0.4);
-filter: blur(100px);
-    height: 10rem;
-    right: -4.7rem;
-    transform: skewX(336deg);
-    width: 20rem;
-    z-index: 190;
-	isolation: isolate;
+	opacity: .5;
+	display: flex;
+	position: absolute;
+	clip-path: polygon(100% 0, 11% 0, 50% 84%);
+	filter: blur(0px);
+	bottom: -11.2rem;
+	background: rgba(0, 0, 0, 0.4);
+	filter: blur(100px);
+	height: 10rem;
+	right: -4.8rem;
+	transform: skewX(41deg);
+	width: 20rem;
+	z-index: 99;
 }
 
 .bottom {
@@ -172,7 +181,9 @@ filter: blur(100px);
 	width: clamp(3rem, 2vw, 7rem);
 	aspect-ratio: 5/7;
 	border-radius: 10px;
-z-index: 200;
+	z-index: 200;
+	font-size: .5em;
+	color: black;
 	border: aliceblue 5px solid;
 	outline: 3px solid rgb(168, 177, 113);
 	filter: drop-shadow(5px 5px 2px rgb(48, 51, 32));
