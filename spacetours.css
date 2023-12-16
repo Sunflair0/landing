@@ -74,8 +74,11 @@ footer {
 	align-items: center;
 	margin: auto;
 	height: 90vh;
+	rotate: -5deg;
 	filter: drop-shadow(2px 20px 2px rgba(5, 2, 43, 0.5));
-	width: clamp(400px, 28.5vw, 35%);
+	width: clamp(400px, 28.5vw, 50%);
+	border: 2px solid;
+	background: repeating-linear-gradient(5deg, black 0 20px, transparent 20px 60px, black 60px 80px);
 }
 
 .logo {
@@ -84,6 +87,7 @@ footer {
 	box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.625);
 	aspect-ratio: 87/20;
 	top: 25%;
+	rotate: 5deg;
 	background-image: url(assets/STbrand.png);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -93,10 +97,11 @@ svg {
 	width: max-content;
 	position: absolute;
 	top: 35%;
+	rotate: 5deg;
 	stroke: rgb(211, 90, 207);
 	stroke-width: 0.5mm;
 	fill: url('#gradient');
-	height: clamp(8vh, 25vw, 13vh) ;
+	height: clamp(8vh, 25vw, 13vh);
 	margin: auto;
 }
 
@@ -104,6 +109,7 @@ svg {
 	width: max-content;
 	position: absolute;
 	top: 50%;
+	rotate: 5deg;
 	font-size: .75em;
 	font-weight: 700;
 	font-family: Times, serif;
@@ -152,13 +158,13 @@ svg {
 }
 
 .tag {
-display: flex;
-    position: absolute;
-    font-family: Times, serif;
-    font-size: .4em;
-    bottom: 1.5rem;
-    left: 1rem;
-    width: 40%;
+	display: flex;
+	position: absolute;
+	font-family: Times, serif;
+	font-size: .4em;
+	bottom: 1.5rem;
+	left: 1rem;
+	width: 40%;
 }
 
 .buttons {

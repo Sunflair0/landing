@@ -1,15 +1,18 @@
 body {
+	position: relative;
+	width: 100%;
 	background: linear-gradient(145deg, rgb(94, 101, 56) 20%, rgb(4, 2, 26) 60%);
-	overflow-x: hidden;
 	color: aliceblue;
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow-x: clip;
 }
 
 header,
 footer {
 	background: rgb(0, 0, 0);
 	position: fixed;
+	width: 100%;
 	z-index: 1000;
 }
 
@@ -24,6 +27,7 @@ article {
 	position: relative;
 	height: 85vh;
 	width: 100%;
+	z-index: -1;
 }
 
 header {
@@ -34,16 +38,71 @@ footer {
 	border-top: aqua 1px solid;
 }
 
-.motto {
+.flag_wrap {
 	display: flex;
-	position: absolute;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	right: 1rem;
-	background-color: rgb(0, 0, 0);
-	justify-content: center;
+	flex-direction: column;
+	position: fixed;
+	height: 70vh;
 	top: 10vh;
-	width: 50%;
+	z-index: 200;
+}
+
+.flag {
+	position: absolute;
+	font-size: medium;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	left: 0;
+	height: 62vh;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	text-transform: uppercase;
+	background-color: rgb(0, 0, 0);
+	padding: 10px;
+	top: 18vh;
+	width: 4vw;
 	border: 2px solid rgb(176, 176, 176);
+	z-index: 100;
+}
+
+.idb {
+	position: absolute;
+	background-image: url(assetsBank/idb.png);
+	background-size: contain;
+	height: 40px;
+	aspect-ratio: 1;
+	top: 10vh;
+}
+
+.loginBlock {
+	display: flex;
+	justify-content: space-around;
+	position: absolute;
+	top: 10vh;
+	right: 2rem;
+	background: black;
+	height: 25vh;
+	width: 50vh;
+	border: 2px white solid;
+}
+
+.loginBlock>button {
+	color: white;
+	background: black;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	border-left: none;
+	border-right: none;
+	border-radius: 2px;
+	padding: 2px auto;
+	margin: 20px;
+	width: 100px;
+	height: 30px;
+	transition: .3s all;
+}
+
+.loginBlock button:hover {
+	color: aqua;
+	border-color: aqua;
 }
 
 .circle {
@@ -57,9 +116,8 @@ footer {
 	flex-direction: column;
 	background: rgb(168, 177, 113);
 	height: 7rem;
-	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.745), inset 0 0 150px rgb(70, 82, 24);
+	box-shadow: inset 0 0 50px rgba(45, 46, 8, 0.745), inset 0 0 100px rgba(0, 0, 0, 0.745), inset 0 0 150px rgb(70, 82, 24);
 	aspect-ratio: 1;
-	z-index: 1;
 }
 
 .intro1 {
@@ -106,60 +164,114 @@ footer {
 	position: absolute;
 	top: 0;
 	height: 90vh;
-	width: 100vw;
+	width: 100%;
 	border-bottom: 2px aqua solid;
 	border-top: transparent;
 	background-image: radial-gradient(aqua 0 1px, rgba(122, 233, 233, 0.288) 1px 2px, transparent 4px 6px);
 	background-size: 40px 40px;
 	left: 0;
+	z-index: -1;
 }
 
-.pyramid_wrapper {
+.py_wrapper {
+	position: absolute;
 	display: flex;
-	top: 0;
-	right: 0;
-	width: 50%;
+	top: 50vh;
+	right: 0rem;
+	height: 100vh;
+	width: 50vw;
+	z-index: 21;
+	scale: .5;
 }
 
 .pyramid {
-	clip-path: polygon(48.6% 0%, 0 80%, 41% 100%);
+	clip-path: polygon(48.6% 0%, 0 84%, 41% 100%);
 	position: absolute;
-	width: 20rem;
+	width: 16.7rem;
 	height: 10rem;
-	background-color: rgb(208, 215, 160);
+	background: repeating-linear-gradient(13.2deg, rgb(208, 215, 160) 0 17px, black 18px 19px, aqua 20px 21px, rgb(62, 62, 62) 23px 25px);
 	right: -10vw;
-	z-index: 1;
-	bottom: -3rem;
 	z-index: 100;
 }
 
 .pyramid2 {
-	content: "";
-	clip-path: polygon(50% 0%, 91% 84%, 42% 100%);
+	clip-path: polygon(50.5% 0%, 97% 86%, 42% 100%);
 	position: absolute;
-	width: 20rem;
+	width: 16rem;
 	height: 10rem;
-	background-color: rgb(4, 3, 21);
-	right: -9vw;
-	z-index: 1;
-	bottom: -3rem;
+	background: repeating-linear-gradient(-9deg, rgb(4, 3, 21) 0 16px, rgb(0, 21, 246) 16px 17px, aqua 19px 21px, black 22px 24px);
+	right: -7.5vw;
+	overflow-x: clip;
 	z-index: 100;
 }
 
-.reflect {
-	opacity: .5;
-	display: flex;
+.pyTopBottom {
 	position: absolute;
+	filter: blur(6px);
+	right: 12rem;
+	bottom: 9rem;
+	z-index: 21;
+}
+
+.reflect {
 	clip-path: polygon(100% 0, 11% 0, 50% 84%);
-	filter: blur(0px);
-	bottom: -11.2rem;
-	background: rgba(0, 0, 0, 0.4);
-	filter: blur(100px);
+	position: absolute;
+	width: 17rem;
 	height: 10rem;
-	right: -4.8rem;
+	background: rgb(0, 0, 0);
+	opacity: .5;
 	transform: skewX(41deg);
-	width: 20rem;
-	z-index: 99;
+}
+
+.stripe {
+	display: block;
+	position: relative;
+	width: 100%;
+	bottom: -5vh;
+	height: 20vh;
+	z-index: 20;
+	background: repeating-linear-gradient(45deg, rgb(131, 139, 88) 0 10px, rgb(103, 109, 69) 10px 20px);
+	border-bottom: aqua 2px solid;
+}
+
+.inset {
+	clip-path: inset(5% 20% 15% 10%);
+	height: 200px;
+	width: 200px;
+	background-color: brown;
+}
+
+#cards {
+	display: flex;
+	position: relative;
+	z-index: 19;
+}
+
+#cards::before,
+#cards::after {
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 55% 50%;
+	width: 55%;
+	height: 30%;
+	border: aqua 2px solid;
+
+}
+
+#cards::before {
+	background: radial-gradient(circle at left, black 0%, teal 40%);
+	transform: translate(0%, -54%);
+	z-index: 15;
+	isolation: isolate;
+	width: 100%;
+}
+
+#cards::after {
+	background: #838B58;
+	transform: translate(90%, -70%);
+	height: 20%;
+	z-index: 16;
 }
 
 .bottom {
@@ -168,22 +280,23 @@ footer {
 	top: 5vh;
 	justify-content: space-around;
 	align-items: center;
-	height: 110vh;
+	height: 90vh;
 	width: 100%;
 	opacity: 1;
 	border: 3px solid rgba(0, 0, 0, 0.4);
-	background: repeating-linear-gradient(45deg, rgb(131, 139, 88) 0 10px, rgb(103, 109, 69) 10px 20px);
-	z-index: 20;
+	background: rgb(131, 139, 88) 0 10px;
 }
 
 .bottom_card {
-	background: linear-gradient(aliceblue, rgb(168, 177, 113));
+	/* background: linear-gradient(aliceblue, rgb(168, 177, 113)); */
 	width: clamp(3rem, 2vw, 7rem);
 	aspect-ratio: 5/7;
 	border-radius: 10px;
 	z-index: 200;
 	font-size: .5em;
 	color: black;
+	z-index: 55;
+	isolation: isolate;
 	border: aliceblue 5px solid;
 	outline: 3px solid rgb(168, 177, 113);
 	filter: drop-shadow(5px 5px 2px rgb(48, 51, 32));
@@ -191,7 +304,7 @@ footer {
 
 .bottom_card::before {
 	content: "";
-	height: 0;
+	height: 100%;
 	width: 100%;
 	background: linear-gradient(rgb(96, 215, 215), rgb(32, 145, 145));
 	position: absolute;
@@ -199,5 +312,5 @@ footer {
 }
 
 .bottom_card:hover::before {
-	height: 100%;
+	height: 0%;
 }
