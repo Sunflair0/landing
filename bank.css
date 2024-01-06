@@ -1,16 +1,17 @@
 body {
 	position: relative;
 	width: 100%;
+	height: 100%;
 	background: linear-gradient(145deg, rgb(94, 101, 56) 20%, rgb(4, 2, 26) 60%);
 	color: aliceblue;
 	background-repeat: no-repeat;
 	background-size: cover;
-	overflow-x: clip;
+	overflow-x: hidden;
 }
 
 header,
 footer {
-	background: rgb(0, 0, 0);
+	background: #002E43;
 	position: fixed;
 	width: 100%;
 	z-index: 1000;
@@ -22,10 +23,11 @@ nav {
 }
 
 article {
-	display: block;
-	padding-top: 3em;
+	display: flex;
 	position: relative;
-	height: 95vh;
+	top: 0;
+	padding-top: 3em;
+	height: 100vh;
 	width: 100%;
 	z-index: -1;
 }
@@ -47,13 +49,13 @@ footer {
 	z-index: 200;
 }
 
-.flag {
+.unfurl {
 	position: absolute;
 	font-size: medium;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	left: -80px;
-	/* left: 0px; */
-	height: 62vh;
+	height: max-content;
+	font-size: clamp(8px, 2vw, 14px);
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	text-transform: uppercase;
@@ -63,9 +65,14 @@ footer {
 	width: 40px;
 	border: 2px solid rgb(176, 176, 176);
 	z-index: 100;
+	transition: left .3s;
 }
 
-.idb {
+.flag {
+	left: 0px;
+}
+
+#idb {
 	position: absolute;
 	background-image: url(assetsBank/idb.png);
 	background-size: contain;
@@ -75,9 +82,6 @@ footer {
 	appearance: none;
 }
 
-input:checked {
-	left: 0px;
-}
 
 .loginBlock {
 	display: flex;
@@ -109,15 +113,17 @@ input:checked {
 	background: transparent;
 	border-radius: 2px;
 	width: 100px;
-	height: 30px;
+	height: 36px;
 	transition: .3s all;
 }
 
 .loginBlock div:hover {
 	color: aqua;
 	border-color: aqua;
-	background: rgba(2, 119, 119, 0.366);
-
+	background-image: radial-gradient(rgb(2, 119, 119) 0px 1px, transparent 1px 3px);
+	background-size: 3px 3px;
+	text-shadow: 1px 1px 0 black, -1px 1px 0 black,
+		-1px -1px 0 black, 1px -1px 0 black;
 }
 
 .circle {
@@ -125,7 +131,6 @@ input:checked {
 	position: sticky;
 	border-radius: 50%;
 	top: 6.5vh;
-	margin-top: 3rem;
 	margin-left: 10%;
 	justify-content: center;
 	flex-direction: column;
@@ -140,6 +145,10 @@ input:checked {
 	top: 30%;
 	left: 5px;
 	font-size: 60px;
+	text-shadow: 2px 2px 0 rgb(48, 51, 32),
+		-1px 1px 0 rgb(255, 255, 255),
+		-2px -2px 0 rgb(76, 76, 76),
+		2px -1px 0 rgb(197, 231, 2);
 	filter: drop-shadow(5px 5px 2px rgb(48, 51, 32));
 	transform: skew(350deg);
 	width: 45%;
@@ -150,6 +159,7 @@ input:checked {
 	position: absolute;
 	filter: inherit;
 	font-size: 22px;
+	text-shadow: 2px 0px 1px rgb(0, 0, 0);
 	transform: translate(166.3px, 2.7px);
 	color: aqua;
 }
@@ -174,12 +184,11 @@ input:checked {
 	padding-right: 15px;
 }
 
-.top {
+#top {
 	display: flex;
 	position: absolute;
 	top: 0;
 	height: 90vh;
-	width: 100%;
 	border-bottom: 2px aqua solid;
 	border-top: transparent;
 	background-image: radial-gradient(aqua 0 1px, rgba(122, 233, 233, 0.288) 1px 2px, transparent 4px 6px);
@@ -188,36 +197,73 @@ input:checked {
 	z-index: -1;
 }
 
-.py_wrapper {
-	position: absolute;
+#pyravault {
+	height: 95vh;
+	top: 0;
 	display: flex;
-	top: 50vh;
-	right: 0rem;
-	height: 100vh;
-	width: 50vw;
+}
+
+.py_wrapper {
+	top: 2vh;
+	display: flex;
+	position: sticky;
+	left: 46%;
+	height: 60vh;
+	width: 50%;
 	z-index: 21;
-	scale: .5;
+	border: 2px solid rgb(221, 11, 11);
 }
 
 .pyramid {
-	clip-path: polygon(48.6% 0%, 0 84%, 41% 100%);
-	position: absolute;
-	width: 16.7rem;
-	height: 10rem;
-	background: repeating-linear-gradient(13.2deg, rgb(208, 215, 160) 0 17px, black 18px 19px, aqua 20px 21px, rgb(62, 62, 62) 23px 25px);
-	right: -10vw;
-	z-index: 100;
+
+	width: 100%;
+	height: 100%;
 }
 
-.pyramid2 {
+.hole_wall {
+	border: 2px solid rgb(233, 221, 221);
+	border-radius: 50%;
+}
+
+.hole {
+	top: 0;
+	display: flex;
+	position: relative;
+	height: 100%;
+	width: 50%;
+	border: 2px solid rgb(233, 221, 221);
+	border-radius: 50%;
+	width: 50%;
+	height: 32%;
+	transform: translate(-180px, 220px);
+	background: rgb(58, 58, 58);
+	box-shadow: inset 15px 20px 2px black, inset -15px 20px 2px black;
+}
+
+
+
+.pyramid span:nth-child(1) {
+	clip-path: polygon(48.6% 0%, 0 84%, 41% 100%);
+	position: absolute;
+	width: 85%;
+	height: 6rem;
+	background: repeating-linear-gradient(13.2deg, rgb(208, 215, 160) 0 17px, black 18px 19px, aqua 20px 21px, rgb(62, 62, 62) 23px 25px);
+	left: 0%;
+	z-index: 100;
+	border: 2px solid rgb(233, 221, 221);
+
+}
+
+.pyramid span:nth-child(2) {
 	clip-path: polygon(50.5% 0%, 97% 86%, 42% 100%);
 	position: absolute;
-	width: 16rem;
-	height: 10rem;
+	width: 85%;
+	height: 6rem;
 	background: repeating-linear-gradient(-9deg, rgb(4, 3, 21) 0 16px, rgb(0, 21, 246) 16px 17px, aqua 19px 21px, black 22px 24px);
-	right: -7.5vw;
-	overflow-x: clip;
+	left: 50%;
 	z-index: 100;
+	border: 2px solid rgb(9, 89, 19);
+
 }
 
 .pyTopBottom {
@@ -228,7 +274,7 @@ input:checked {
 	z-index: 21;
 }
 
-.shadow {
+.shadow1 {
 	clip-path: polygon(100% 0, 11% 0, 50% 84%);
 	position: absolute;
 	width: 17rem;
@@ -241,19 +287,34 @@ input:checked {
 .stripe {
 	display: block;
 	position: absolute;
+	box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 10px rgba(255, 255, 255, 0.4);
 	width: 100%;
 	bottom: -5vh;
 	height: 10vh;
 	z-index: 20;
-	background: repeating-linear-gradient(45deg, rgb(131, 139, 88) 0 10px, rgb(103, 109, 69) 10px 20px);
+	background: repeating-linear-gradient(45deg, rgb(131, 139, 88) 0 10px, rgb(49, 49, 49) 10px 12px, rgb(103, 109, 69) 12px 22px, rgb(49, 64, 12) 22px 24px);
+	border-top: aqua 2px solid;
+	border-bottom: aqua 2px solid;
+
+}
+
+.stripe {
+	display: block;
+	position: absolute;
+	box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 10px rgba(255, 255, 255, 0.4), 0px -10px 7px rgba(74, 74, 74, 0.3);
+	width: 100%;
+	bottom: -5vh;
+	height: 10vh;
+	z-index: 20;
+	background: linear-gradient(rgba(0, 0, 0, 0.862) 0%, transparent 20%, rgba(224, 237, 150, 0.5) 50%, transparent 85%, rgba(0, 0, 0, 0.6) 98%),
+		repeating-linear-gradient(45deg, rgb(131, 139, 88) 0 10px, rgb(49, 49, 49) 10px 12px, rgb(103, 109, 69) 12px 22px, rgb(49, 64, 12) 22px 24px);
+	border-top: aqua 2px solid;
 	border-bottom: aqua 2px solid;
 }
 
-.inset {
-	clip-path: inset(5% 20% 15% 10%);
-	height: 200px;
-	width: 200px;
-	background-color: brown;
+#pyravault {
+	top: 5vh;
+	background: linear-gradient(rgb(88, 106, 139), rgb(2, 138, 138), rgb(24, 132, 132));
 }
 
 #cards {
@@ -267,26 +328,33 @@ input:checked {
 	content: "";
 	display: block;
 	position: absolute;
-	border-radius: 55% 50%;
-	width: 55%;
-	height: 30%;
-	border: aqua 2px solid;
-
+	border-radius: 0% 100% 10% 67% / 0% 50% 0% 50%;
+	width: 50%;
+	height: 14%;
 }
 
 #cards::before {
-	background: radial-gradient(circle at left, black 0%, teal 40%);
-	transform: translate(0%, -54%);
-	z-index: 15;
+	background: #838B58;
+	transform: translate(0%, -137%);
+	z-index: 5;
 	isolation: isolate;
-	width: 100%;
+
 }
 
 #cards::after {
-	background: #838B58;
-	transform: translate(90%, -70%);
-	height: 20%;
-	z-index: 16;
+	background: rgb(24, 132, 132);
+	border-right: transparent 2px solid;
+	transform: translate(100%, -137%);
+	z-index: 60;
+}
+
+@keyframes wavy {
+
+	50% {
+		border-radius: 10% 95% 70% 0%;
+
+	}
+
 }
 
 .bottom {
@@ -307,6 +375,7 @@ input:checked {
 	width: clamp(3rem, 2vw, 7rem);
 	aspect-ratio: 5/7;
 	border-radius: 10px;
+	position: relative;
 	z-index: 200;
 	font-size: .5em;
 	color: black;
@@ -328,4 +397,152 @@ input:checked {
 
 .bottom_card:hover::before {
 	height: 0%;
+}
+
+#GW {
+	justify-content: center;
+	background-color: #04021A;
+	height: 100%;
+	width: 100vh;
+}
+
+.features {
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	margin-left: 2rem;
+	height: 450px;
+	width: 50%;
+	background-color: #838B58;
+	opacity: 0;
+	animation: fadeDown 2s ease forwards;
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px)
+	}
+
+}
+
+.features nav {
+	display: flex;
+	position: absolute;
+	height: 1vh;
+	bottom: 3vh;
+}
+
+.feature_GW {
+	display: flex;
+	width: 100%;
+	height: 400px;
+	position: absolute;
+	inset: 0;
+	margin: 0 auto;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+}
+
+.feature_GW>div {
+	display: flex;
+	min-width: 400px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: center;
+}
+
+.features nav a {
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 0;
+	background-image: linear-gradient(transparent 30%, black);
+}
+
+.features nav a:hover {
+	border: 1px solid rgb(255, 255, 255);
+}
+
+#red {
+	background: radial-gradient(rgb(184, 10, 71), rgb(64, 8, 37));
+}
+
+#yellow {
+	background: radial-gradient(yellow, rgb(196, 196, 3));
+}
+
+#moon {
+	background: radial-gradient(rgb(248, 191, 150), rgb(200, 151, 116));
+}
+
+#orange {
+	background: radial-gradient(orange, rgb(194, 126, 1));
+}
+
+#green {
+	background: radial-gradient(rgb(1, 196, 1), green);
+}
+
+#blue {
+	background: radial-gradient(rgb(0, 0, 255), rgb(1, 1, 186));
+}
+
+#purple {
+	background: radial-gradient(rgb(202, 2, 202), rgb(106, 1, 106));
+}
+
+.g_well {
+	position: absolute;
+	height: 10rem;
+	width: 10rem;
+	right: 5%;
+	rotate: y 66deg;
+	border-radius: 50%;
+	background-color: black;
+	background-image: url(assets/stars.png);
+	background-size: cover;
+	z-index: -1;
+}
+
+.g_well::before {
+	content: "";
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	border-radius: inherit;
+	box-shadow: inset 0 0 50px black;
+	background-image: repeating-conic-gradient(transparent 0%,
+			rgba(0, 0, 0, 0.8) 15%,
+			transparent 33%,
+			rgba(0, 0, 0, 0.8) 50%,
+			transparent 67%),
+		radial-gradient(transparent 34%, rgba(117, 70, 5, 0.963) 35%, rgb(59, 13, 3) 40%, black 43%, rgb(208, 78, 8) 45%, rgba(165, 107, 5, 0.568) 60%, rgb(207, 76, 15));
+	border: 5px solid transparent;
+	outline: 10px double rgb(0, 0, 0);
+	outline-offset: -47px;
+	animation: around 10s linear infinite;
+}
+
+@keyframes around {
+	100% {
+		rotate: 360deg;
+	}
+}
+
+.g_well::after {
+	content: "";
+	position: absolute;
+	height: 6rem;
+	width: 6rem;
+	rotate: x 66deg;
+	border-radius: inherit;
+	transform: translate(-1rem, 5rem);
+	background-image: radial-gradient(circle at 10% -10%, rgba(255, 255, 255, 0.725) 0%, transparent 40%),
+		radial-gradient(circle at 20% 40%, black, rgb(59, 13, 3), rgb(0, 0, 0) 80%);
 }

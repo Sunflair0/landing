@@ -163,17 +163,7 @@ body {
 	font-size: medium;
 }
 
-.div5:hover,
-.div6:hover,
-.div7:hover,
-.div8:hover,
-.div9:hover,
-.div10:hover,
-.div11:hover,
-.div1:hover,
-.div2:hover,
-.div3:hover,
-.div4:hover {
+.square>div:hover {
 	border: 2px solid rgb(52, 255, 177);
 	background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.5) 0 1px, transparent 1px 23px),
 		repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0 1px, transparent 1px 20px),

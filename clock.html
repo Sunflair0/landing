@@ -15,6 +15,7 @@
 	<nav>
 		<a href="index.html"></a>
 		<a href="two.html"></a>
+		<a href="weather.html"></a>
 		<a href="clock.html" class="active"></a>
 		<a href="cartoon.html"></a>
 		<a href="porch.html"></a>
@@ -25,11 +26,36 @@
 		<a href="bank.html"></a>
 		<a href="maria.html"></a>
 	</nav>
+	<header></header>
+	<div class="time_read">
+		<div class="day_wrapper">
+			<div id="day"></div>
+		</div>
+	</div>
 	<div class="square">
 		<div class="star"></div>
-		<div class="circle"></div>
+		<div class="circle">
+			<div class="hour" style="top: .25rem;">12</div>
+			<div class="hour two">1</div>
+			<div class="hour ">2</div>
+			<div class="hour" style="top: 3.75rem; right: .5rem;">3</div>
+			<div class="hour">4</div>
+			<div class="hour">5</div>
+			<div class="hour" style="top: 7rem;">6</div>
+			<div class="hour" style="top: 6.5rem; right: 5.25rem;">7</div>
+			<div class="hour" style="top: 5.5rem; right: 6.5rem;">8</div>
+			<div class="hour" style="top: 3.75rem; right: 7.25rem;">9</div>
+			<div class="hour">10</div>
+			<div class="hour">11</div>
+
+		</div>
 	</div>
-	<div class="left"></div>
+	<footer></footer>
+	<script>
+		const d = new Date();
+		console.log(d);
+		setInterval(document.getElementById("day").innerHTML = `d.getDate()`, `d.getHours()`, `d.getMinutes()`, ":", `d.getSeconds() `, 1000)
+	</script>
 
 </body>
 

@@ -17,12 +17,12 @@
 
 html {
 	scroll-behavior: smooth;
-	min-height: 100vh;
+	height: 100dvh;
 	font-family: "Lora", sans-serif;
 	font-size: 40px;
 }
 
-nav {
+body>nav {
 	display: flex;
 	margin-left: 1rem;
 	height: 5vh;
@@ -44,6 +44,11 @@ a:visited {
 	background: rgb(79, 81, 48);
 }
 
+nav {
+position: fixed;
+z-index: 100;
+}
+
 nav .active {
 	border: 2px solid rgb(0, 0, 0);
 	background: aliceblue;
@@ -55,7 +60,7 @@ a:hover {
 }
 
 header {
-	position: absolute;
+	position: fixed;
 	background: rgb(178, 184, 4);
 	height: 5vh;
 	width: 100%;
@@ -63,8 +68,13 @@ header {
 	z-index: 1;
 }
 
+article>:nth-child(1) {
+top: 6vh;
+position: absolute;
+}
+
 footer {
-	position: absolute;
+	position: fixed;
 	background: rgb(178, 184, 4);
 	height: 5vh;
 	width: 100%;
