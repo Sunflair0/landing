@@ -12,7 +12,7 @@ body::before {
 	content: "";
 	background-image: url(assets/streaks.png);
 	background-size: cover;
-	opacity: 0.25;
+	opacity: 0.175;
 	position: fixed;
 	height: 100%;
 	width: 100%;
