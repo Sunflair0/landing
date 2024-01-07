@@ -73,6 +73,75 @@ top: 6vh;
 position: absolute;
 }
 
+.room {
+	position: absolute;
+	height: 32rem;
+	width: 32rem;
+	background: linear-gradient(-40deg, rgba(65, 220, 220, 0.15) 10%, transparent 40%, transparent 60%, rgba(0, 128, 128, 0.15)) 90%,
+		linear-gradient(40deg, rgba(65, 220, 220, 0.15) 10%, transparent 40%, transparent 60%, rgba(0, 128, 128, 0.15)) 90%;
+	/* outline: 3px rgb(0, 0, 0) solid; */
+	outline-offset: -3px;
+	box-shadow: inset 2px 2px 1px rgba(184, 10, 228, 0.553),
+		inset -2px -2px 1px rgba(7, 189, 165, 0.5);
+	background-image: hsla(245, 53%, 17%, 0.3);
+	border: 2px solid rgb(29, 220, 134);
+	transition: .3s all;
+}
+
+.scene {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	width: clamp(150px, 0.5vw, 25%);
+	height: 10vh;
+	margin-left: 0.75rem;
+	margin-top: -4.25rem;
+	justify-content: center;
+	align-items: center;
+	perspective: 1500px;
+	perspective-origin: 50% calc(50% - 300px);
+}
+
+.cube {
+ position: absolute;
+    top: 49vh;
+    height: 13rem;
+    width: 8rem;
+	transform-style: preserve-3d;
+	rotate: y 224deg;
+}
+
+.left_Sq {
+    translate:-53rem -0.2rem -4.75rem;
+	rotate: y -90deg;
+}
+
+.right_Sq {
+	left: 7rem;
+	rotate: y 90deg;
+}
+
+.top_Sq {
+	bottom: 7rem;
+	rotate: x 90deg;
+	background: hwb(181 58% 0% / 0.15);
+}
+
+.bottom_Sq {
+    translate: -20.1rem 4rem -14.4rem;
+    rotate: x -90deg;
+    background: rgba(21, 141, 141, 0.271);
+}
+
+.front_Sq {
+    translate: -49rem 8.1rem 18rem;
+	transform-style: preserve-3d;
+}
+
+.back_Sq {
+	translate: 0 0 -7rem;
+}
+
 footer {
 	position: fixed;
 	background: rgb(178, 184, 4);
