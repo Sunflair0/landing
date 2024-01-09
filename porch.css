@@ -1,4 +1,45 @@
 body {
-background-color: rgb(110, 166, 186);
+	background-color: rgb(110, 166, 186);
 }
 
+article {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 4rem;
+	padding-left: 20vw;
+	padding-right: 20vw;
+}
+
+article::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	opacity: .5;
+	z-index: -1;
+}
+
+#one::before {
+	background-image: url(assets/flower2.jpg);
+}
+
+#two::before {
+	background-image: url(assets/flower1.jpg);
+}
+
+#three::before {
+	background-image: url(assets/flower6.jpg);
+}
