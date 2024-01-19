@@ -8,6 +8,7 @@ body {
 header,
 footer {
 	background: rgb(10, 8, 27);
+	color: aqua;
 }
 
 header {

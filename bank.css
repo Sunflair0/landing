@@ -35,9 +35,7 @@ article {
 	text-align: center;
 	box-sizing: border-box;
 	padding-top: 4rem;
-	padding-left: 20vw;
-	padding-right: 20vw;
-border-bottom: aqua 1px solid;
+	border-bottom: aqua 1px solid;
 }
 
 article::before {
@@ -225,6 +223,7 @@ footer {
 #pyravault {
 	height: 95vh;
 	top: 0;
+	background: linear-gradient(rgb(88, 106, 139), rgb(2, 138, 138), rgb(24, 132, 132));
 	display: flex;
 }
 
@@ -234,7 +233,7 @@ footer {
 	position: sticky;
 	left: 46%;
 	height: 60vh;
-	width: 50%;
+	width: 400px;
 	z-index: 21;
 	border: 2px solid rgb(221, 11, 11);
 }
@@ -269,43 +268,42 @@ footer {
 .pyramid span:nth-child(1) {
 	clip-path: polygon(48.6% 0%, 0 84%, 41% 100%);
 	position: absolute;
-	width: 85%;
+	width: 101%;
 	height: 6rem;
 	background: repeating-linear-gradient(13.2deg, rgb(208, 215, 160) 0 17px, black 18px 19px, aqua 20px 21px, rgb(62, 62, 62) 23px 25px);
-	left: 0%;
+	left: 0;
 	z-index: 100;
-	border: 2px solid rgb(233, 221, 221);
-
 }
 
 .pyramid span:nth-child(2) {
 	clip-path: polygon(50.5% 0%, 97% 86%, 42% 100%);
 	position: absolute;
-	width: 85%;
+	width: 98%;
 	height: 6rem;
 	background: repeating-linear-gradient(-9deg, rgb(4, 3, 21) 0 16px, rgb(0, 21, 246) 16px 17px, aqua 19px 21px, black 22px 24px);
-	left: 50%;
+	left: 0;
 	z-index: 100;
-	border: 2px solid rgb(9, 89, 19);
-
 }
 
 .pyTopBottom {
 	position: absolute;
-	filter: blur(6px);
 	right: 12rem;
 	bottom: 9rem;
 	z-index: 21;
 }
 
-.shadow1 {
+.pyramid span:nth-child(3) {
 	clip-path: polygon(100% 0, 11% 0, 50% 84%);
 	position: absolute;
-	width: 17rem;
-	height: 10rem;
+	width: 10.6em;
+	height: 6rem;
+	left: 1.5rem;
+	bottom: 0vh;
 	background: rgb(0, 0, 0);
 	opacity: .5;
-	transform: skewX(41deg);
+	transform: skewX(42deg);
+	filter: blur(6px);
+
 }
 
 .stripe {
@@ -322,12 +320,8 @@ footer {
 
 }
 
-#pyravault {
-	top: 10vh;
-	background: linear-gradient(rgb(88, 106, 139), rgb(2, 138, 138), rgb(24, 132, 132));
-}
-
 #cards {
+top: 0;
 	z-index: 19;
 }
 
@@ -406,13 +400,11 @@ footer {
 }
 
 #GW {
-	justify-content: center;
 	background-color: #04021A;
-	/* overflow: hidden; */
 }
 
 #GW::before {
-background-image: url(assets/flower2.jpg);
+	background-image: url(assets/flower2.jpg);
 }
 
 .room {
@@ -523,9 +515,9 @@ background-image: url(assets/flower2.jpg);
 .left {
 	position: absolute;
 	width: 50%;
-	top: 10%;
-	opacity: 0;
-	animation: fadeDown 2s ease forwards;
+	top: 10vh;
+	opacity: 1;
+	/* animation: fadeDown 2s ease forwards; */
 }
 
 @keyframes fadeDown {
@@ -544,8 +536,8 @@ background-image: url(assets/flower2.jpg);
 .left nav {
 	display: flex;
 	position: absolute;
-	bottom: -18.5vh;
-	isolation: isolate;
+	/* bottom: -18.5vh; */
+	/* isolation: isolate; */
 	z-index: 200;
 }
 

@@ -1,14 +1,19 @@
 body {
 	background-color: rgba(196, 171, 135, 0.592);
 	background-color: rgb(45, 155, 142);
-	/* background-color: rgb(0, 0, 0); */
 	min-height: 100vh;
-	color: rgb(89, 233, 255);
-	text-shadow: 2px 2px 2px rgb(0, 0, 0);
+	color: rgb(0, 255, 247);
+	font-size: 20px;
+	text-shadow: 0px 0px 5px rgb(0, 0, 0), 0px 5px 10px rgb(0, 0, 0), 0px 10px 20px rgb(0, 0, 0);
 	overflow: hidden;
 	position: relative;
 	perspective: 1000px;
 	transform-style: preserve-3d;
+}
+
+footer {
+	background-color: transparent;
+	color: white;
 }
 
 .blob1 {
@@ -134,13 +139,14 @@ body {
 	border: 6px double rgba(0, 0, 0, 0.7);
 	height: 85vh;
 	width: 90%;
+	filter: drop-shadow(20px 20px 0 rgba(0, 0, 0, 0.686));
 	transform: translateZ(10px);
 	margin: auto;
 	inset: 0;
 	padding: 10px;
 	/* background: linear-gradient(rgb(255, 244, 97), rgb(190, 181, 117), rgb(255, 255, 255)); */
-	background-image: repeating-radial-gradient(rgb(0, 0, 0), rgba(154, 6, 144, 0.55));
-	background-size: 5px 5px;
+	background-image: repeating-radial-gradient(rgb(0, 0, 0), rgba(94, 209, 255, 0.5));
+	background-size: 6px 6px;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(4, 1fr);
@@ -149,7 +155,7 @@ body {
 }
 
 .square>div {
-	border: 2px solid rgb(255, 174, 52);
+	border: 2px solid rgb(100, 29, 233);
 	border-radius: 10px;
 	background: rgba(184, 162, 73, 0.75);
 	background-image:
@@ -167,7 +173,6 @@ body {
 		0 0 30px black inset;
 	padding: 5px;
 	transition: .05s all;
-	font-size: medium;
 }
 
 .square>div:hover {

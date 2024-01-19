@@ -20,14 +20,15 @@ body {
 
 .bigbox {
 	display: flex;
+	position: relative;
 	width: 80vw;
+	top: 15vh;
 	height: 30vh;
 	border: 2px solid black;
 	margin: auto;
 	background-color: aqua;
 	align-items: center;
 	justify-content: space-around;
-
 }
 
 .cOne,

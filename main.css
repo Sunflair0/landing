@@ -45,8 +45,8 @@ a:visited {
 }
 
 nav {
-position: fixed;
-z-index: 100;
+	position: fixed;
+	z-index: 100;
 }
 
 nav .active {
@@ -68,11 +68,14 @@ header {
 	z-index: 1;
 }
 
-article>:nth-child(1) {
-top: 6vh;
-position: absolute;
+.top_center {
+	position: relative;
+	top: 10vh;
+	height: 7vh;
+	text-align: center;
+	width: 100%;
+	margin: auto;
 }
-
 
 .leftB {
 	right: 1rem;
@@ -106,6 +109,7 @@ position: absolute;
 }
 
 footer {
+	font-size: 14px;
 	position: fixed;
 	background: rgb(178, 184, 4);
 	height: 5vh;
@@ -123,4 +127,19 @@ footer {
 .intro {
 	margin: 1rem;
 	isolation: isolate;
+}
+
+.present {
+	position: sticky;
+	top: 5vh;
+	height: 7vh;
+	text-align: center;
+	margin: auto;
+}
+
+.want {
+	display: flex;
+	height: 100%;
+	margin-left: 1rem;
+	align-items: center;
 }

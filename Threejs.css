@@ -1,0 +1,21 @@
+body {
+	background: linear-gradient(rgb(234, 254, 247), rgb(187, 255, 219), rgb(172, 242, 220));
+}
+
+header {
+	background-image: linear-gradient(rgb(57, 237, 204),#1a8abe);
+}
+
+footer {
+	background-image: linear-gradient(#1a8abe, rgb(57, 237, 204));
+}
+
+nav {
+	position: fixed;
+	z-index: 2000;
+}
+
+section {
+	height: 100vh;
+	width: 100%;
+}
