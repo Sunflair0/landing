@@ -1,45 +1,26 @@
 body {
-	min-height: 100vh;
-	background-image: repeating-linear-gradient(rgb(246, 229, 116), rgb(178, 184, 4));
-}
-
-body::before {
-	content: "";
-	position: absolute;
-	background: rgba(0, 0, 0, 0.5);
-	background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.8), transparent);
+	height: 100vh;
+	background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.8), transparent),
+		linear-gradient(rgb(86, 85, 77), rgb(171, 177, 4));
 	background-size: 20px 20px;
-	height: 100%;
-	width: 100%;
-	margin-top: -10px;
-	z-index: -1;
+
 }
 
 header {
-	position: absolute;
 	background: rgb(178, 184, 4);
-	height: 5vh;
-	width: 100%;
-	top: 0;
 	border-bottom: rgb(0, 0, 0) 1px solid;
-
 }
 
 footer {
-	position: absolute;
 	background: rgb(178, 184, 4);
-	height: 5vh;
-	width: 100%;
-	bottom: 0;
 	border-top: rgb(0, 0, 0) 1px solid;
-
 }
 
 .main_square {
 	display: flex;
-	position: relative;
+	position: absolute;
 	border-radius: 5px;
-	top: calc(5vh - 12px);
+	inset: 0;
 	margin: auto;
 	height: 80vh;
 	width: 90%;
@@ -73,7 +54,8 @@ footer {
 	border-radius: 50%;
 	height: 97%;
 	aspect-ratio: 1;
-	background-image: repeating-radial-gradient(rgb(0, 0, 0), transparent);
+	background-image: radial-gradient(circle at 50% 50%, rgb(187, 178, 13) 0%, transparent 20%),
+		repeating-radial-gradient(rgb(0, 0, 0), transparent);
 	background-size: 20px 20px;
 	border: 3px solid rgba(192, 172, 20, 0.455);
 	margin: auto;
@@ -85,17 +67,26 @@ footer {
 
 .glass {
 	position: relative;
-	height: 2rem;
-	width: 2rem;
+	height: .5rem;
+	width: .5rem;
 	border: 2px solid rgba(0, 0, 0, 0.4);
 	background-color: rgba(0, 0, 0, 0.2);
+	animation: blink .5s ease-in-out infinite;
+	top: .5rem;
+	left: .5rem;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
 }
 
 .glass::before {
 	content: "";
 	position: absolute;
-	height: 1.75rem;
-	width: 1.75rem;
+	height: .25rem;
+	width: .25rem;
 	margin: auto;
 	inset: 0;
 	background-color: rgb(93, 127, 59);
