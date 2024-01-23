@@ -11,7 +11,7 @@ body {
 	background-color: rgb(69, 68, 68);
 	display: flex;
 	position: relative;
-	height: 100vh;
+	height: 100dvh;
 	width: 100vw;
 	background-image: url(assets/flower2.jpg);
 	background-position: left;
