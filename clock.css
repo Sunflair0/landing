@@ -59,13 +59,13 @@ footer {
 	cursor: pointer;
 	background: rgba(255, 255, 255, 0.462);
 	background-image: url(assets/sound_on.png);
-	background-size: contain;
+	background-size: cover;
 	background-position: center center;
 }
 
 .sound_off {
 	background-image: url(assets/sound_off.png);
-	background-size: contain;
+	background-size: cover;
 	z-index: 10;
 }
 
