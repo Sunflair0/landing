@@ -34,6 +34,7 @@
 		</div>
 	</div>
 	<div class="square">
+		<div class="sound_control sound_off"></div>
 		<div id="circle">
 			<ul>
 				<li style="--i:1"><span>1</span></li>
@@ -71,7 +72,7 @@
 	</footer>
 	<script>
 
-		let play = true;
+		let play = false;
 		let time = document.getElementById("time");
 		let date = document.getElementById("date");
 		let year = document.getElementById("year");
@@ -84,6 +85,17 @@
 		const months = [
 			'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
 		];
+
+		let sound = document.querySelector('.sound_control');
+
+		if (sound) {
+			sound.addEventListener('click', soundToggle);
+
+			function soundToggle() {
+				play = !play;
+				sound.classList.toggle('sound_off');
+			}
+		}
 
 		setInterval(() => {
 			d = new Date();
@@ -112,8 +124,12 @@
 			date.innerText = week + " " + mth + " " + day + ", " + yr;
 
 			if (play == true) {
-				let tock = new Audio('assets/tock.mp3');
+				// https://audiotrimmer.com/
+				let tock = new Audio('assets/tock1.mp3');
 				tock.play();
+			}
+			else {
+				console.log(play, 'this should be false');
 			}
 		}, 1000);
 
