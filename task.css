@@ -1,7 +1,7 @@
 body {
 	height: 100vh;
-	background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.8), transparent),
-		linear-gradient(rgb(86, 85, 77), rgb(171, 177, 4));
+	background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.8), transparent 7%),
+		linear-gradient(rgb(86, 85, 77), rgb(171, 175, 55));
 	background-size: 20px 20px;
 
 }

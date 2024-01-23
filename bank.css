@@ -1,11 +1,7 @@
 body {
 	position: relative;
-	width: 100%;
-	height: 100%;
 	background: linear-gradient(145deg, rgb(94, 101, 56), rgb(32, 29, 1), black);
 	color: aliceblue;
-	background-repeat: no-repeat;
-	background-size: cover;
 	scroll-snap-type: y mandatory;
 	overflow-x: hidden;
 	z-index: -1;
@@ -19,26 +15,38 @@ footer {
 	z-index: 1000;
 }
 
+header {
+	border-bottom: aqua 1px solid;
+}
+
+footer {
+	border-top: aqua 1px solid;
+}
+
 nav {
 	position: fixed;
 	z-index: 2000;
 }
 
 article {
+	top: 0;
 	position: relative;
+	padding-top: 4rem;
 	width: 100%;
 	height: 100vh;
+	border-bottom: aqua 1px solid;
+	z-index: -1;
+}
+
+.room {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	text-align: center;
-	box-sizing: border-box;
-	padding-top: 4rem;
-	border-bottom: aqua 1px solid;
 }
 
-article::before {
+.room::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -51,14 +59,6 @@ article::before {
 	background-attachment: fixed;
 	opacity: .5;
 	z-index: -1;
-}
-
-header {
-	border-bottom: aqua 1px solid;
-}
-
-footer {
-	border-top: aqua 1px solid;
 }
 
 .flag_wrap {
@@ -103,7 +103,6 @@ footer {
 	appearance: none;
 }
 
-
 .loginBlock {
 	display: flex;
 	justify-content: space-evenly;
@@ -147,22 +146,31 @@ footer {
 		-1px -1px 0 black, 1px -1px 0 black;
 }
 
+#first_block {
+	height: 90vh;
+	background: radial-gradient(aqua 0 1px, rgba(122, 233, 233, 0.288) 1px 2px, transparent 4px 6px);
+	background-size: 40px 40px;
+}
+.first_right {
+top: 20vh;
+position: absolute;
+height: 70vh;
+width: 30%;
+left: 0;
+}
+
 .circle {
 	display: flex;
 	position: sticky;
 	border-radius: 50%;
-	top: 6.5vh;
-	margin-left: 10%;
+	top: 0vh;
+	left: 10%;
 	justify-content: center;
 	flex-direction: column;
-	background: rgb(168, 177, 113);
+	background: radial-gradient(rgb(242, 253, 170), rgb(230, 244, 142));
 	height: 7rem;
-	box-shadow: inset 0 0 50px rgba(45, 46, 8, 0.745), inset 0 0 100px rgba(0, 0, 0, 0.745), inset 0 0 150px rgb(70, 82, 24);
+	box-shadow: inset 0px 0px 50px rgba(47, 48, 0, 0.879), inset 0 0 100px rgba(69, 71, 42, 0.94), inset 0 0 150px rgba(142, 140, 56, 0.478);
 	aspect-ratio: 1;
-}
-
-.display {
-	display: flex;
 }
 
 .intro1 {
@@ -190,6 +198,8 @@ footer {
 }
 
 .intro2 {
+display: flex;
+flex-direction: column;
 	position: absolute;
 	text-align: right;
 	bottom: 50%;
@@ -203,42 +213,85 @@ footer {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.intro2>div {
+.intro2>span {
 	background-color: rgba(0, 0, 0, 0.8);
 	margin-bottom: 0.1rem;
 	padding-right: 15px;
 }
 
-#first {
-	top: 0;
-	height: 90vh;
-	/* border-bottom: 2px aqua solid; */
-	border-top: transparent;
-	background: radial-gradient(aqua 0 1px, rgba(122, 233, 233, 0.288) 1px 2px, transparent 4px 6px);
-	background-size: 40px 40px;
-	left: 0;
-	z-index: -1;
+.first_left {
+top: 20vh;
+position: absolute;
+height: 70vh;
+width: 60%;
+right: 0;
+border: 2px solid white;
+perspective: 1000px;
+}
+
+.carousel {
+position: relative;
+border-radius: 50%;
+height: 90%;
+width: 70%;
+rotate: x 120deg;
+margin: auto;
+inset: 0;
+border: 2px solid white;
+transform-style: preserve-3d;
+}
+
+.carousel li {
+position: absolute;
+border: 2px solid white;
+width: 20px;
+height: 30px;
+}
+
+.carousel li:nth-child(1) {
+  transform: translate(0%, -50%) rotate(120deg) translateX(0px, 0px);
+background-color: chartreuse;
+}
+
+.carousel li:nth-child(2) {
+  transform: translate(-50%, 0%) rotate(240deg) translateX(50px, 0px);
+background-color: rgb(0, 17, 255);
+}
+
+.carousel li:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(360deg) translateX(-50px, 0px);
+background-color: rgb(255, 60, 0);
 }
 
 #pyravault {
 	height: 95vh;
-	top: 0;
-	background: linear-gradient(rgb(88, 106, 139), rgb(2, 138, 138), rgb(24, 132, 132));
-	display: flex;
+	background: rgb(131, 139, 88) 0 10px;
+}
+
+.ground {
+position: absolute;
+    background-color: #002E43;
+    width: 120%;
+    margin: auto;
+top: 30vh;
+    left: -7%;
+    height: 35%;
+    rotate: 15deg;
+    overflow: hidden;
 }
 
 .py_wrapper {
 	top: 2vh;
 	display: flex;
 	position: sticky;
-	left: 46%;
+	left: 75%;
 	height: 60vh;
 	width: 400px;
 	z-index: 21;
-	border: 2px solid rgb(221, 11, 11);
 }
 
 .pyramid {
+	position: relative;
 	width: 100%;
 	height: 100%;
 }
@@ -263,8 +316,6 @@ footer {
 	box-shadow: inset 15px 20px 2px black, inset -15px 20px 2px black;
 }
 
-
-
 .pyramid span:nth-child(1) {
 	clip-path: polygon(48.6% 0%, 0 84%, 41% 100%);
 	position: absolute;
@@ -273,6 +324,7 @@ footer {
 	background: repeating-linear-gradient(13.2deg, rgb(208, 215, 160) 0 17px, black 18px 19px, aqua 20px 21px, rgb(62, 62, 62) 23px 25px);
 	left: 0;
 	z-index: 100;
+	filter: blur(0px);
 }
 
 .pyramid span:nth-child(2) {
@@ -285,6 +337,25 @@ footer {
 	z-index: 100;
 }
 
+.pyBlur {
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	filter: blur(6px);
+}
+
+.pyBlur span:nth-child(1) {
+	clip-path: polygon(100% 0, 11% 0, 50% 84%);
+	width: 10.6em;
+	height: 6rem;
+	left: 1.5rem;
+	bottom: .5vh;
+	background: rgb(0, 0, 0);
+	opacity: .5;
+	transform: skewX(42deg);
+	filter: blur(6px);
+}
+
 .pyTopBottom {
 	position: absolute;
 	right: 12rem;
@@ -292,26 +363,12 @@ footer {
 	z-index: 21;
 }
 
-.pyramid span:nth-child(3) {
-	clip-path: polygon(100% 0, 11% 0, 50% 84%);
-	position: absolute;
-	width: 10.6em;
-	height: 6rem;
-	left: 1.5rem;
-	bottom: 0vh;
-	background: rgb(0, 0, 0);
-	opacity: .5;
-	transform: skewX(42deg);
-	filter: blur(6px);
-
-}
-
 .stripe {
 	display: block;
 	position: relative;
 	box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 10px rgba(255, 255, 255, 0.4);
 	width: 100%;
-	bottom: -10vh;
+	bottom: 0;
 	height: 10vh;
 	z-index: 20;
 	background: repeating-linear-gradient(45deg, rgb(131, 139, 88) 0 10px, rgb(49, 49, 49) 10px 12px, rgb(103, 109, 69) 12px 22px, rgb(49, 64, 12) 22px 24px);
@@ -321,7 +378,8 @@ footer {
 }
 
 #cards {
-top: 0;
+	top: 0;
+	background: linear-gradient(rgb(88, 106, 139), rgb(2, 138, 138), rgb(24, 132, 132));
 	z-index: 19;
 }
 
@@ -349,12 +407,9 @@ top: 0;
 }
 
 @keyframes wavy {
-
 	50% {
 		border-radius: 10% 95% 70% 0%;
-
 	}
-
 }
 
 .bottom {
@@ -367,7 +422,6 @@ top: 0;
 	width: 100%;
 	opacity: 1;
 	border: 3px solid rgba(0, 0, 0, 0.4);
-	background: rgb(131, 139, 88) 0 10px;
 }
 
 .bottom_card {
@@ -400,6 +454,7 @@ top: 0;
 }
 
 #GW {
+	top: 10vh;
 	background-color: #04021A;
 }
 
@@ -407,7 +462,7 @@ top: 0;
 	background-image: url(assets/flower2.jpg);
 }
 
-.room {
+.room1 {
 	position: absolute;
 	height: 32rem;
 	width: 32rem;
@@ -493,11 +548,11 @@ top: 0;
 
 .product {
 	display: flex;
-	position: absolute;
+	position: relative;
 	height: 400px;
 	width: 400px;
-	inset: 0;
-	margin: 0 auto;
+	/* inset: 0; */
+	margin: auto;
 	border-radius: 10px;
 	background-size: cover;
 	background: rgba(0, 0, 0, 0.23);
@@ -542,12 +597,13 @@ top: 0;
 }
 
 .feature_GW {
+
 	display: flex;
 	height: 400px;
 	width: 400px;
 	position: absolute;
-	inset: 0;
-	margin: 0 auto;
+	/* inset: 0; */
+	margin: auto;
 	overflow-x: scroll;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
@@ -589,8 +645,9 @@ top: 0;
 }
 
 #buynav {
-	inset: 0;
-	margin: 0 auto;
+	/* inset: 0; */
+	top: 0;
+	margin: auto;
 	height: fit-content;
 	width: fit-content;
 	padding: 2px;
@@ -635,6 +692,7 @@ top: 0;
 }
 
 .g_well {
+top: 10vh;
 	position: absolute;
 	height: 10rem;
 	width: 10rem;

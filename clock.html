@@ -28,39 +28,75 @@
 	</nav>
 	<header></header>
 	<div class="time_read">
-		<div id="month">01</div>
-		<div id="day">15</div>
 		<div class="time_wrapper">
-			<div id="hour">13</div>
-			<div id="minute">00</div>
-			<div id="second">01</div>
+			<div id="date"></div>
+			<div id="time"></div>
 		</div>
 	</div>
 	<div class="square">
-		<div class="star"></div>
-		<div class="circle">
-			<div class="hour" style="top: .25rem;">12</div>
-			<div class="hour two">1</div>
-			<div class="hour ">2</div>
-			<div class="hour" style="top: 3.75rem; right: .5rem;">3</div>
-			<div class="hour">4</div>
-			<div class="hour">5</div>
-			<div class="hour" style="top: 7rem;">6</div>
-			<div class="hour" style="top: 6.5rem; right: 5.25rem;">7</div>
-			<div class="hour" style="top: 5.5rem; right: 6.5rem;">8</div>
-			<div class="hour" style="top: 3.75rem; right: 7.25rem;">9</div>
-			<div class="hour">10</div>
-			<div class="hour">11</div>
+		<div id="circle">
+			<div id="clock">
+				<div class="tick bar1"></div>
+				<div class="tick bar2"></div>
+				<div class="tick bar3"></div>
+				<div class="tick bar4"></div>
+
+				<div class="clockface"></div>
+
+				<div id="inner"></div>
+
+				<div id="hour"></div>
+				<div id="minute"></div>
+				<div id="second"></div>
+
+			</div>
 		</div>
 	</div>
 	<footer>
 		<div class="want">Real time clocks with different styles</div>
 	</footer>
 	<script>
-		const currentDate = new Date();
-		const timestamp = currentDate.getTime();
-		let time = new Date();
-		setInterval(document.getElementById("minute").innerHTML = time.getMinutes, 1000);
+		let time = document.getElementById("time");
+		let date = document.getElementById("date");
+		let year = document.getElementById("year");
+		let month = document.getElementById("month");
+		let day = document.getElementById("day");
+		let hour = document.getElementById("hour");
+		let minute = document.getElementById("minute");
+		let second = document.getElementById("second");
+		const dayz = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+		const months = [
+			'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+		];
+
+		setInterval(() => {
+			d = new Date();
+
+			week = dayz[d.getDay()];
+			mth = months[d.getMonth()];
+			day = d.getDate();
+			yr = d.getFullYear();
+
+			hr = d.getHours();
+			min = d.getMinutes();
+			sec = d.getSeconds();
+			hr_rotation = 30 * hr + min / 2;
+			min_rotation = 6 * min;
+			sec_rotation = 6 * sec;
+
+			min = min < 10 ? '0' + min : min;
+			sec = sec < 10 ? '0' + sec : sec;
+
+			hour.style.transform = `rotate(${hr_rotation}deg)`;
+			minute.style.transform = `rotate(${min_rotation}deg)`;
+			second.style.transform = `rotate(${sec_rotation}deg)`;
+			time.innerText = hr + ':' + min + ':' + sec;
+			date.innerText = week + " " + mth + " " + day + ", " + yr;
+
+
+
+		}, 1000);
+
 	</script>
 
 </body>

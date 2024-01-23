@@ -1,3 +1,12 @@
+:root {
+	--clock: #152222;
+}
+
+html {
+	font-size: 24px;
+	font-family: 'Courier New', Courier, monospace;
+}
+
 body {
 	background-color: rgb(69, 68, 68);
 	display: flex;
@@ -25,32 +34,11 @@ footer {
 	background: #2d6471;
 }
 
-.time_read {
-	display: flex;
-	position: relative;
-	justify-content: center;
-	margin: 0 auto;
-	height: 15vh;
-	width: 25%;
-	background-color: #2d6471;
-	border-radius: 0 0 20px 20px;
-	box-shadow: inset 0 0 15px black, inset 0 0 37px #5f9ea0;
-	/* background-color: #5f9ea0; */
-	/* border-bottom: rgba(13, 176, 187, 0.662) 2px solid; */
-}
-
-.time_wrapper {
-display: flex;
-	position: absolute;
-	top: 5vh;
-	padding: 20px;
-}
-
 .square {
 	display: flex;
 	position: absolute;
 	border-radius: 5px;
-background: #077c9642;
+	background: #077c9642;
 	background-image: repeating-linear-gradient(transparent 0 30px, rgba(113, 111, 77, 0.15) 30px 60px), repeating-linear-gradient(90deg, transparent 0 30px, rgba(113, 111, 77, 0.15) 30px 60px);
 	height: 80%;
 	width: 90%;
@@ -60,36 +48,186 @@ background: #077c9642;
 	border: 2px rgb(113, 111, 77) solid;
 }
 
-.circle {
-	color: aliceblue;
+.time_read {
+	position: relative;
+	justify-content: center;
+	margin: 5vh auto;
+	height: 12vh;
+	width: 25%;
+	font-size: clamp(12px, 2vw, 24px);
+	background-color: #2d6471;
+	border-radius: 0 0 20px 20px;
+	box-shadow: inset 0 -5px 15px black, inset 0 0 37px #5f9ea0;
+	z-index: 1;
+}
+
+.time_wrapper {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
-	height: 60%;
+	justify-content: space-around;
+	align-items: center;
+	height: 75%;
+	width: 85%;
+	border: 3px solid black;
+	border-radius: 0 0 16px 16px;
+	background: var(--clock);
+	margin: auto;
+	inset: 0;
+	padding: 5px;
+}
+
+#date {
+	color: #34bbbb;
+}
+
+#time {
+	color: rgb(239, 73, 73);
+}
+
+#circle {
+	display: flex;
+	position: relative;
+	color: aliceblue;
+	height: 60vh;
 	aspect-ratio: 1;
 	box-shadow: 10px 10px 50px rgb(182, 179, 136) inset, 25px 10px 50px rgb(69, 68, 47) inset, 50px 10px 50px rgb(87, 8, 84) inset, 20px 10px 50px rgb(232, 206, 150) inset;
 	border-radius: 50%;
-	margin: auto;
+	padding: 1rem;
+	align-items: center;
+	justify-content: center;
 	inset: 0;
+	margin: auto;
 	background-image: radial-gradient(circle at 50% 70%,
 			rgba(0, 0, 0, 0.382) 0%, rgb(239, 211, 112) 90%),
 		radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.937) -10%, transparent 50%);
 }
 
-.circle::before {
+#circle::before {
 	content: "";
 	position: absolute;
 	outline: rgba(255, 10, 255, 0.484) 1px solid;
 	outline-offset: 4px;
 	border: 2px solid rgba(116, 116, 51, 0.849);
 	background-image: conic-gradient(from 0deg at -10% 70%, rgba(93, 93, 82, 0.267) 70deg, rgba(117, 117, 84, 0.405) 75deg, rgba(54, 52, 19, 0.267) 80deg);
-	/* background: rgba(54, 52, 19, 0.267);	 */
-
 	height: 103%;
 	aspect-ratio: 1;
 	border-radius: 50%;
 	margin: auto;
 	inset: 0;
 	filter: blur(2px);
+}
 
+#clock {
+	position: relative;
+	overflow: hidden;
+	background: var(--clock);
+	box-shadow: inset 1px 1px 5px rgb(133, 113, 4),
+		1px 1px 5px rgb(15, 4, 141);
+	padding: 1rem;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+#clock::before,
+#clock::after,
+.tick {
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	background: #3ff1f0;
+	top: 0;
+	left: 49%;
+	z-index: 0;
+}
+
+#clock::after {
+	rotate: 90deg;
+	background: #3ff189;
+
+}
+
+.tick {
+	background: hsla(180, 57%, 38%, 0.5);
+	width: 3px;
+}
+
+.bar1 {
+	rotate: 30deg;
+}
+
+.bar2 {
+	rotate: 60deg;
+}
+
+.bar3 {
+	rotate: 120deg;
+}
+
+.bar4 {
+	rotate: 150deg;
+}
+
+.clockface {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	background: var(--clock);
+	border-radius: 50%;
+	z-index: 1;
+}
+
+#inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 16px;
+	height: 16px;
+	border-radius: 18px;
+	margin-left: -9px;
+	margin-top: -6px;
+	background: #2d6471;
+	z-index: 11;
+}
+
+#hour,
+#minute,
+#second {
+	position: absolute;
+	border-radius: 10px;
+	transform-origin: bottom;
+	z-index: 5;
+}
+
+#hour {
+	background-color: #5f2d71;
+	width: 2.4%;
+	height: 25%;
+	top: 26%;
+	left: 48.85%;
+	opacity: .8;
+}
+
+#minute {
+	background-color: #2d6471;
+	width: 2%;
+	height: 30%;
+	top: 20%;
+	left: 49.25%;
+	opacity: .8;
+}
+
+#second {
+	background-color: #3ff189;
+	width: 1.6%;
+	height: 40%;
+	top: 10%;
+	left: 49.25%;
+	opacity: .8;
 }
 
 .hour {
@@ -98,18 +236,6 @@ background: #077c9642;
 	font-size: 20px;
 	font-weight: 600;
 	right: 50%;
-}
-
-.star {
-	position: absolute;
-	clip-path: polygon(30% 0%, 58% 40%, 100% 30%, 63% 55%, 70% 100%, 45% 60%, 0% 70%, 40% 45%);
-	height: 5%;
-	aspect-ratio: 1;
-	right: 28%;
-	background-color: rgba(137, 43, 226, 0.707);
-	border: rgb(183, 0, 255) 20px solid;
-	animation: star 3s infinite linear;
-	z-index: 10;
 }
 
 @keyframes star {

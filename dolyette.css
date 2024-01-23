@@ -24,14 +24,14 @@ section {
 position: fixed;
 top: 10vh;
 left: 2rem;
-border: 7px solid rgb(96, 102, 36);
+border: 7px solid rgb(130, 11, 182);
 width: 2rem;
 height: 5rem;
-background: linear-gradient(rgb(66, 103, 60), rgb(85, 125, 46));
+background: linear-gradient(rgb(32, 7, 255), rgb(8, 0, 255));
 background-image: repeating-linear-gradient(transparent, black 0 5px, transparent 5px 10px),
  repeating-linear-gradient(90deg, transparent, black 0 5px, transparent 5px 10px);
 background-size: 21px 23px;
 box-shadow: 10px 10px 4px black;
-outline: 2px solid seagreen;
+outline: 2px solid rgb(5, 255, 176);
 outline-offset: -6px;
 }
