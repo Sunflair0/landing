@@ -29,7 +29,7 @@ body {
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	animation: rotator 60s linear infinite;
+	/* animation: rotator 60s ease-in-out infinite; */
 }
 
 @keyframes rotator {
@@ -59,7 +59,6 @@ body {
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	/* top: -5vh; */
 	height: 100%;
 	width: 100%;
 	animation: bg_fade 90s infinite alternate ease-in-out;
@@ -130,7 +129,6 @@ body {
 	height: 100vh;
 	width: 100%;
 	position: absolute;
-	/* background-image: url("assets/daywaterfrag.png"); */
 	z-index: 10;
 	filter: url("#sparkle");
 	background-position: bottom center;
