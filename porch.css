@@ -56,11 +56,12 @@ article {
 }
 
 .sky {
-	position: absolute;
+	position: fixed;
 	background-image: radial-gradient(circle at 50% 100%, rgb(65, 233, 138), rgb(37, 142, 195));
+	background-size: cover;
 	margin-top: 0;
 	height: 65vh;
-	width: 100%;
+	width: 100%
 }
 
 .dock {
