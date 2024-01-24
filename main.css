@@ -17,7 +17,7 @@
 
 html {
 	scroll-behavior: smooth;
-	height: 100dvh;
+	height: 100svh;
 	font-family: "Lora", sans-serif;
 	font-size: 40px;
 }
@@ -25,6 +25,7 @@ html {
 body>nav {
 	display: flex;
 	margin-left: 1rem;
+	font-size: 20px;
 	height: 5vh;
 
 	@media only screen and (max-width: 720px) {
@@ -76,7 +77,7 @@ header {
 }
 
 .top_center {
-	position: relative;
+	position: fixed;
 	top: 10vh;
 	height: 7vh;
 	text-align: center;
@@ -146,7 +147,9 @@ footer {
 
 .want {
 	display: flex;
-	height: 100%;
-	margin-left: 1rem;
 	align-items: center;
+	font-size: 9px;
+	height: 100%;
+	width: 90%;
+	margin: auto;
 }

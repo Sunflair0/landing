@@ -1,7 +1,6 @@
 body {
 	background-image: linear-gradient(rgb(179, 235, 255), rgb(3, 108, 146));
 	color: aqua;
-	font-size: 14px;
 }
 
 header {
@@ -56,7 +55,7 @@ article {
 }
 
 .sky {
-	position: fixed;
+	position: relative;
 	background-image: radial-gradient(circle at 50% 100%, rgb(65, 233, 138), rgb(37, 142, 195));
 	background-size: cover;
 	margin-top: 0;
@@ -67,21 +66,25 @@ article {
 .dock {
 	position: absolute;
 	clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-	height: 7rem;
-	width: 15rem;
-	background: repeating-linear-gradient(transparent, transparent 0 1px, rgb(63, 35, 11) 3px 50px);
+	height: 4rem;
+	width: 5rem;
+	background: repeating-linear-gradient(transparent, transparent 0 1px, rgb(63, 35, 11) 3px 27px);
 	inset: 0;
 	margin: 0 auto;
-	margin-top: 62vh;
+	margin-top: 79vh;
 }
 
 .light {
 	display: flex;
-	position: relative;
+	position: absolute;
 	border-radius: 50%;
-	height: 2rem;
+	height: 1rem;
 	box-shadow: 0 0 7px rgba(86, 86, 86, 0.856) inset;
 	aspect-ratio: 1;
 	background-image: radial-gradient(rgb(237, 237, 167), rgba(235, 200, 96, 0.766));
 	z-index: 10;
+}
+
+.light:nth-child(1) {
+	transform: translate(20%, 0);
 }
