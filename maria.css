@@ -1,25 +1,31 @@
 a {
-z-index: 100;
+	z-index: 100;
 }
 
 header,
 footer {
 	background: none;
-z-index: 1;
+	z-index: 1;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
 }
 
 body {
 	background-color: rgb(0, 0, 0);
-	background-image: url("/assets/star.jpg"), url("/assets/daywaterfrag.png");
+	background-image: url("assets/star.jpg"), url("assets/daywaterfrag.png");
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
-overflow: hidden;
+	overflow: hidden;
 }
 
 .stars {
 	background-color: rgb(0, 0, 0);
-	background-image: url("/assets/star.jpg");
+	background-image: url("assets/star.jpg");
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -45,7 +51,7 @@ overflow: hidden;
 .container {
 	position: relative;
 	height: 100svh;
-top:  -5vh;
+	top: -5vh;
 }
 
 .backround_fade {
@@ -53,10 +59,10 @@ top:  -5vh;
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
-/* top: -5vh; */
+	/* top: -5vh; */
 	height: 100%;
 	width: 100%;
-	animation: bg_fade 90s infinite alternate linear;
+	animation: bg_fade 90s infinite alternate ease-in-out;
 	z-index: 3;
 }
 
@@ -124,13 +130,13 @@ top:  -5vh;
 	height: 100vh;
 	width: 100%;
 	position: absolute;
-	background-image: url("/assets/daywaterfrag.png");
+	/* background-image: url("assets/daywaterfrag.png"); */
 	z-index: 10;
 	filter: url("#sparkle");
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	animation: sparkle 90s infinite alternate ease;
+	animation: sparkle 90s infinite alternate ease-in-out;
 }
 
 svg {
@@ -140,44 +146,29 @@ svg {
 
 @keyframes bg_fade {
 
-	0% {
-		background-image: url("/assets/day.png");
-	}
-
+	0%,
 	35% {
-		background-image: url("/assets/day.png");
+		background-image: url("assets/day.png");
 	}
 
-	65% {
-		background-image: url("/assets/castleNight.png");
-		;
-	}
-
+	65%,
 	100% {
-		background-image: url("/assets/castleNight.png");
-		;
+		background-image: url("assets/castleNight.png");
 	}
 
 }
 
 @keyframes sparkle {
 
-	0% {
-		background-image: url("/assets/daywaterfrag.png");
-	}
 
+	0%,
 	35% {
-		background-image: url("/assets/daywaterfrag.png");
+		background-image: url("assets/daywaterfrag.png");
 	}
 
-	65% {
-		background-image: url("/assets/nitewaterfrag.png");
-		;
-	}
-
+	65%,
 	100% {
-		background-image: url("/assets/nitewaterfrag.png");
-		;
+		background-image: url("assets/nitewaterfrag.png");
 	}
 
 }
