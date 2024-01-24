@@ -151,12 +151,13 @@ article {
 	background: radial-gradient(aqua 0 1px, rgba(122, 233, 233, 0.288) 1px 2px, transparent 4px 6px);
 	background-size: 40px 40px;
 }
+
 .first_right {
-top: 20vh;
-position: absolute;
-height: 70vh;
-width: 30%;
-left: 0;
+	top: 20vh;
+	position: absolute;
+	height: 70vh;
+	width: 30%;
+	left: 0;
 }
 
 .circle {
@@ -198,8 +199,8 @@ left: 0;
 }
 
 .intro2 {
-display: flex;
-flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	text-align: right;
 	bottom: 50%;
@@ -220,47 +221,47 @@ flex-direction: column;
 }
 
 .first_left {
-top: 20vh;
-position: absolute;
-height: 70vh;
-width: 60%;
-right: 0;
-border: 2px solid white;
-perspective: 1000px;
+	top: 20vh;
+	position: absolute;
+	height: 70vh;
+	width: 60%;
+	right: 0;
+	border: 2px solid white;
+	perspective: 1000px;
 }
 
 .carousel {
-position: relative;
-border-radius: 50%;
-height: 90%;
-width: 70%;
-rotate: x 120deg;
-margin: auto;
-inset: 0;
-border: 2px solid white;
-transform-style: preserve-3d;
+	position: relative;
+	border-radius: 50%;
+	height: 90%;
+	width: 70%;
+	rotate: x 120deg;
+	margin: auto;
+	inset: 0;
+	border: 2px solid white;
+	transform-style: preserve-3d;
 }
 
 .carousel li {
-position: absolute;
-border: 2px solid white;
-width: 20px;
-height: 30px;
+	position: absolute;
+	border: 2px solid white;
+	width: 20px;
+	height: 30px;
 }
 
 .carousel li:nth-child(1) {
-  transform: translate(0%, -50%) rotate(120deg) translateX(0px, 0px);
-background-color: chartreuse;
+	transform: translate(0%, -50%) rotate(120deg) translateX(0px, 0px);
+	background-color: chartreuse;
 }
 
 .carousel li:nth-child(2) {
-  transform: translate(-50%, 0%) rotate(240deg) translateX(50px, 0px);
-background-color: rgb(0, 17, 255);
+	transform: translate(-50%, 0%) rotate(240deg) translateX(50px, 0px);
+	background-color: rgb(0, 17, 255);
 }
 
 .carousel li:nth-child(3) {
-  transform: translate(-50%, -50%) rotate(360deg) translateX(-50px, 0px);
-background-color: rgb(255, 60, 0);
+	transform: translate(-50%, -50%) rotate(360deg) translateX(-50px, 0px);
+	background-color: rgb(255, 60, 0);
 }
 
 #pyravault {
@@ -269,15 +270,15 @@ background-color: rgb(255, 60, 0);
 }
 
 .ground {
-position: absolute;
-    background-color: #002E43;
-    width: 120%;
-    margin: auto;
-top: 30vh;
-    left: -7%;
-    height: 35%;
-    rotate: 15deg;
-    overflow: hidden;
+	position: absolute;
+	background-color: #002E43;
+	width: 120%;
+	margin: auto;
+	top: 30vh;
+	left: -7%;
+	height: 35%;
+	rotate: 15deg;
+	overflow: hidden;
 }
 
 .py_wrapper {
@@ -290,7 +291,7 @@ top: 30vh;
 	z-index: 21;
 }
 
-.pyramid {
+#pyramid {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -349,7 +350,7 @@ top: 30vh;
 	width: 10.6em;
 	height: 6rem;
 	left: 1.5rem;
-	bottom: .5vh;
+	bottom: -57.5vh;
 	background: rgb(0, 0, 0);
 	opacity: .5;
 	transform: skewX(42deg);
@@ -692,7 +693,7 @@ top: 30vh;
 }
 
 .g_well {
-top: 10vh;
+	top: 10vh;
 	position: absolute;
 	height: 10rem;
 	width: 10rem;
