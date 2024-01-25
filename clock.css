@@ -55,10 +55,8 @@ footer {
 	width: 1rem;
 	height: 1rem;
 	border: 2px rgb(113, 111, 77) solid;
-/* outline: 1px rgb(55, 55, 55) solid;
-outline-offset: -2px; */
-box-shadow: -1px 1px 2px rgb(55, 55, 55) inset, 
-0 -1px 2px rgb(55, 55, 55) inset;
+	box-shadow: -1px 1px 2px rgb(55, 55, 55) inset,
+		0 -1px 2px rgb(55, 55, 55) inset;
 
 	border-left: none;
 	cursor: pointer;
@@ -74,8 +72,6 @@ box-shadow: -1px 1px 2px rgb(55, 55, 55) inset,
 	background-size: 80%;
 	z-index: 10;
 }
-
-
 
 .time_read {
 	position: sticky;
@@ -267,7 +263,7 @@ ul li span {
 }
 
 #hour {
-	background-color: #5f2d71;
+	background-color: #3ff1f0;
 	width: 2.4%;
 	height: 25%;
 	top: 26%;
@@ -276,17 +272,17 @@ ul li span {
 }
 
 #minute {
-	background-color: #2d6471;
+	background-color: #b84be0;
 	width: 2%;
-	height: 30%;
-	top: 20%;
+	height: 35%;
+	top: 15%;
 	left: 49.25%;
 	opacity: .8;
 }
 
 #second {
 	background-color: #3ff189;
-	width: 1.6%;
+	width: .6%;
 	height: 40%;
 	top: 10%;
 	left: 49.25%;

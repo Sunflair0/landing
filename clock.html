@@ -127,12 +127,15 @@
 			document.title = 'Time: ' + ttime;
 			date.innerText = week + " " + mth + " " + day + ", " + yr;
 
+			let tock = new Audio('assets/tock1.mp3');
+
 			if (play == true) {
 				// https://audiotrimmer.com/
-				let tock = new Audio('assets/tock1.mp3');
 				tock.play();
 			}
 			else {
+				tock.muted = true;
+				// tock.pause();
 				console.log(play, 'this should be false');
 			}
 		}, 1000);
