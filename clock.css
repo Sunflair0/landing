@@ -59,13 +59,14 @@ footer {
 	cursor: pointer;
 	background: rgba(255, 255, 255, 0.462);
 	background-image: url(assets/sound_on.png);
-	background-size: cover;
+	background-size: 80%;
 	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .sound_off {
 	background-image: url(assets/sound_off.png);
-	background-size: cover;
+	background-size: 80%;
 	z-index: 10;
 }
 
@@ -132,7 +133,9 @@ footer {
 #circle::before {
 	content: "";
 	position: absolute;
-	border: 5px dotted rgba(245, 245, 222, 0.256);
+	border: 5px solid rgba(245, 245, 222, 0.256);
+	outline: 3px dotted rgb(78, 78, 78);
+	outline-offset: -3px;
 	background-image: conic-gradient(from 0deg at -10% 70%, rgba(93, 93, 82, 0.267) 70deg, rgba(117, 117, 84, 0.405) 75deg, rgba(54, 52, 19, 0.267) 80deg);
 	height: 100%;
 	aspect-ratio: 1;
@@ -159,21 +162,25 @@ ul li {
 	font-size: clamp(24px, 2vw, 30px);
 	text-align: center;
 	transform: rotate(calc(30deg * var(--i)));
-	inset: 10px;
+	inset: .75em;
 }
 
 ul li span {
 	display: inline-block;
 	transform: rotate(calc(-30deg * var(--i)));
-
+	text-shadow: #8877d2b6 1px 1px 2px;
 }
 
 #clock {
 	position: relative;
 	overflow: hidden;
 	background: var(--clock);
-	box-shadow: inset 1px 1px 5px rgb(133, 113, 4),
-		1px 1px 5px rgb(15, 4, 141);
+	box-shadow: 3px 3px 2px rgb(59, 50, 6),
+		3px -3px 2px rgb(59, 50, 6),
+		-3px 3px 25px rgb(178, 167, 114),
+		-3px 3px 1px rgb(0, 0, 0),
+		-3px -3px 25px rgb(111, 105, 77),
+		-3px -3px 1px rgb(0, 0, 0);
 	padding: 2rem;
 	width: 100%;
 	height: 100%;

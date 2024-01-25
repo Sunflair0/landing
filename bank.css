@@ -24,7 +24,7 @@ footer {
 }
 
 nav {
-	position: fixed;
+	/* position: fixed; */
 	z-index: 2000;
 }
 
