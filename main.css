@@ -49,7 +49,7 @@ a {
 
 a:visited {
 	border: 2px solid rgb(0, 0, 0);
-	background: rgb(79, 81, 48);
+	background: rgba(253, 255, 225, 0.125);
 }
 
 nav {

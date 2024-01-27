@@ -4,77 +4,98 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="clock.css">
-	<link rel="icon" type="image/png" href="assets/favicon.ico" />
+	<link rel="icon" href="assets/favicon-32x32.png" type="image/png">
+
 	<title>Clocks</title>
 </head>
 
 <body>
 	<nav>
-		<a href="index.html"></a>
-		<a href="two.html"></a>
-		<a href="weather.html"></a>
-		<a href="clock.html" class="active"></a>
-		<a href="Threejs.html"></a>
-		<a href="porch.html"></a>
-		<a href="mood.html"></a>
-		<a href="spacetours.html"></a>
-		<a href="iow.html"></a>
-		<a href="pillars.html"></a>
-		<a href="bank.html"></a>
-		<a href="maria.html"></a>
-		<a href="dolyette.html"></a>
+		<a href="#one"></a>
+		<a href="#two"></a>
+		<a href="#three"></a>
+		<a href="#four"></a>
+		<a href="#five"></a>
+		<a href="#six"></a>
+		<a href="#seven"></a>
+		<a href="#eight"></a>
+		<a href="#nine"></a>
+		<a href="#ten"></a>
 	</nav>
-	<header></header>
-	<div class="time_read">
-		<div class="time_wrapper">
-			<div id="date"></div>
-			<div id="time"></div>
-		</div>
-	</div>
-	<article>
-		<div class="square">
-			<div class="sound_control sound_off"></div>
-			<div id="circle">
-				<ul>
-					<li style="--i:1"><span>1</span></li>
-					<li style="--i:2"><span>2</span></li>
-					<li style="--i:3"><span>3</span></li>
-					<li style="--i:4"><span>4</span></li>
-					<li style="--i:5"><span>5</span></li>
-					<li style="--i:6"><span>6</span></li>
-					<li style="--i:7"><span>7</span></li>
-					<li style="--i:8"><span>8</span></li>
-					<li style="--i:9"><span>9</span></li>
-					<li style="--i:10"><span>10</span></li>
-					<li style="--i:11"><span>11</span></li>
-					<li style="--i:12"><span>12</span></li>
-				</ul>
-				<div id="clock">
-					<div class="tick bar1"></div>
-					<div class="tick bar2"></div>
-					<div class="tick bar3"></div>
-					<div class="tick bar4"></div>
-
-					<div class="clockface"></div>
-
-					<div id="inner"></div>
-
-					<div id="hour"></div>
-					<div id="minute"></div>
-					<div id="second"></div>
-
-				</div>
+	<header>
+		<div class="time_read">
+			<div class="time_wrapper">
+				<div id="date"></div>
+				<div id="time"></div>
 			</div>
 		</div>
-	</article>
-	<article></article>
-	<footer>
-		<div class="want">Real time clocks with different styles</div>
-	</footer>
-	<script>
+	</header>
+	<div class="square">
+		<div class="sound_control sound_off"></div>
+	</div>
 
+	<section class="section" id="one">
+		<div class="circle">
+			<ul>
+				<li style="--i:1"><span>1</span></li>
+				<li style="--i:2"><span>2</span></li>
+				<li style="--i:3"><span>3</span></li>
+				<li style="--i:4"><span>4</span></li>
+				<li style="--i:5"><span>5</span></li>
+				<li style="--i:6"><span>6</span></li>
+				<li style="--i:7"><span>7</span></li>
+				<li style="--i:8"><span>8</span></li>
+				<li style="--i:9"><span>9</span></li>
+				<li style="--i:10"><span>10</span></li>
+				<li style="--i:11"><span>11</span></li>
+				<li style="--i:12"><span>12</span></li>
+			</ul>
+			<div class="clock">
+				<div class="tick bar1"></div>
+				<div class="tick bar2"></div>
+				<div class="tick bar3"></div>
+				<div class="tick bar4"></div>
+				<div class="clockface"></div>
+				<div id="inner"></div>
+				<div id="hour"></div>
+				<div id="minute"></div>
+				<div id="second"></div>
+			</div>
+		</div>
+	</section>
+	<section class="section" id="two">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="three">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="four">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="five">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="six">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="seven">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="eight">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="nine">
+		<div class="tba">TBA</div>
+	</section>
+	<section class="section" id="ten">
+		<div class="tba">TBA</div>
+	</section>
+	<footer>
+		<div class="clock_name">Real time clocks with different styles</div>
+	</footer>
+
+	<script>
 		let play = false;
 		let time = document.getElementById("time");
 		let date = document.getElementById("date");
@@ -115,8 +136,6 @@
 			min_rotation = 6 * min;
 			sec_rotation = 6 * sec;
 
-			// hr = hr < 13? '--m: white' : '--m: grey';
-
 			min = min < 10 ? '0' + min : min;
 			sec = sec < 10 ? '0' + sec : sec;
 
@@ -128,14 +147,15 @@
 			date.innerText = week + " " + mth + " " + day + ", " + yr;
 
 			let tock = new Audio('assets/tock1.mp3');
+			tock.muted = true;
 
 			if (play == true) {
-				// https://audiotrimmer.com/
 				tock.play();
+				// https://audiotrimmer.com/
+				tock.muted = false;
 			}
 			else {
 				tock.muted = true;
-				// tock.pause();
 				console.log(play, 'this should be false');
 			}
 		}, 1000);

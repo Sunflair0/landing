@@ -2,47 +2,162 @@
 	--clock: #152222;
 }
 
+.tba {
+ 	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+    width: 100%;
+    height: calc(80% - 4px);
+    -webkit-text-stroke: 2px;
+    font-size: 88px;
+    color: #29858a;
+    -webkit-text-stroke-color: #000000;
+    text-shadow: -30px 20px 4px #041231;
+	inset: 0;
+    scroll-snap-align: start;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+
 html {
-	color: #34bbbb;
+    scroll-behavior: smooth;
+    scroll-padding: 5vh;
+	height: 100svh;
+	font-size: 40px;
 	font-family: 'Courier New', Courier, monospace;
 }
 
 body {
 	background-color: rgb(69, 68, 68);
-	display: flex;
 	position: relative;
+	color: #34bbbb;
 	height: 100dvh;
-	width: 100vw;
 	background-image: url(assets/flower2.jpg);
 	background-position: left;
+	background-size: 400% 400%;
+	background-attachment: fixed;
 	background-blend-mode: difference;
+	scroll-snap-type: y mandatory;
 	z-index: -1;
 }
 
 body::before {
 	content: "";
-	height: inherit;
-	width: inherit;
-	position: absolute;
-	background: radial-gradient(transparent 50%, black 95%);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: radial-gradient(transparent 50%, #000000a3 65%);
+}
+
+nav {
+	display: flex;
+	position: fixed;
+	justify-content: space-evenly;
+	top: 0;
+	font-size: 20px;
+	height: 5vh;
+	background: #2d6471;
+	width: 100%;
+	z-index: 10;
+
+	@media only screen and (max-width: 720px) {
+		margin-left: unset;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
 
 }
 
-header,
+nav .active {
+	border: 2px solid rgb(0, 0, 0);
+	background: rgb(229, 225, 13);
+}
+
+
+a {
+	height: clamp(7px, 1.25vh, 20px);
+	aspect-ratio: 1;
+	z-index: 10;
+	margin: auto 10px;
+	background: rgb(185, 191, 115);
+	border-radius: 50%;
+	border: rgb(79, 81, 48) 2px solid;
+	transition: .07s all;
+}
+
+a:visited {
+	border: 2px solid rgb(0, 0, 0);
+	background: rgb(79, 81, 48);
+}
+
+a:hover {
+	border: 2px solid rgb(0, 0, 0);
+	background: aliceblue;
+}
+
+header {
+   position: fixed;
+   width: 100%;
+   height: 12vh;
+   z-index: 1;
+}
+
 footer {
-	position: fixed;
+    bottom: 0;
+    position: fixed;
+    font-size: 14px;
+    position: fixed;
 	background: #2d6471;
+	height: 5vh;
+	width: 100%;
+	z-index: 1;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 5vh;
+	width: 80%;
+	margin: 0 auto; 
+}
+
+.clock_name {
+    display: flex;
+	align-items: center;
+	font-size: 9px;
+	height: 100%;
+	width: 90%;
+	margin: auto;
+}
+
+.top_center {
+	position: fixed;
+	top: 10vh;
+	height: 7vh;
+	text-align: center;
+	width: 100%;
+	margin: auto;
 }
 
 .square {
 	display: flex;
-	position: absolute;
+	position: fixed;
 	border-radius: 5px;
 	background: #077c9642;
 	background-image: repeating-linear-gradient(transparent 0 30px, rgba(113, 111, 77, 0.15) 30px 60px), repeating-linear-gradient(90deg, transparent 0 30px, rgba(113, 111, 77, 0.15) 30px 60px);
 	height: 80%;
 	width: 90%;
 	align-items: center;
+	justify-content: center;
 	margin: auto;
 	inset: 0;
 	border: 2px rgb(113, 111, 77) solid;
@@ -52,30 +167,31 @@ footer {
 	position: absolute;
 	top: 7vh;
 	left: 0;
-	width: 1rem;
-	height: 1rem;
+	width: .75rem;
+	height: .75rem;
+	border-radius: 0 7px 7px 0;
 	border: 2px rgb(113, 111, 77) solid;
 	box-shadow: -1px 1px 2px rgb(55, 55, 55) inset,
 		0 -1px 2px rgb(55, 55, 55) inset;
-
 	border-left: none;
 	cursor: pointer;
 	background: rgba(255, 255, 255, 0.462);
 	background-image: url(assets/sound_on.png);
-	background-size: 80%;
+	background-size: 75%;
 	background-position: center center;
 	background-repeat: no-repeat;
+	z-index: 10;
 }
 
 .sound_off {
 	background-image: url(assets/sound_off.png);
-	background-size: 80%;
+	background-size: 75%;
 	z-index: 10;
 }
 
 .time_read {
-	position: sticky;
-	margin: 5vh auto;
+	position: relative;
+	margin: 0 auto;
 	height: 12vh;
 	top: 5vh;
 	width: 25%;
@@ -113,11 +229,11 @@ footer {
 	color: rgb(239, 73, 73);
 }
 
-#circle {
+.circle {
 	display: flex;
 	position: relative;
-	color: aliceblue;
 	height: clamp(38vh, 40vw, 60vh);
+	width: fit-content;
 	aspect-ratio: 1;
 	box-shadow: 10px 10px 50px rgb(182, 179, 136) inset, 25px 10px 50px rgb(69, 68, 47) inset, 50px 10px 50px rgb(87, 8, 84) inset, 20px 10px 50px rgb(232, 206, 150) inset;
 	border-radius: 50%;
@@ -131,7 +247,7 @@ footer {
 		radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.937) -10%, transparent 50%);
 }
 
-#circle::before {
+.circle::before {
 	content: "";
 	position: absolute;
 	border: 5px solid rgba(245, 245, 222, 0.256);
@@ -160,10 +276,14 @@ ul li {
 	color: var(--clock);
 	list-style: none;
 	position: absolute;
-	font-size: clamp(24px, 2vw, 30px);
+	font-size: clamp(15px, 3vw, 30px);
 	text-align: center;
 	transform: rotate(calc(30deg * var(--i)));
 	inset: .75em;
+	
+		@media only screen and (max-width: 620px) {
+	inset: .2em;
+	}
 }
 
 ul li span {
@@ -172,9 +292,10 @@ ul li span {
 	text-shadow: #8877d2b6 1px 1px 2px;
 }
 
-#clock {
+#one .clock {
 	position: relative;
 	overflow: hidden;
+	scroll-snap-align: start;
 	background: var(--clock);
 	box-shadow: 3px 3px 2px rgb(59, 50, 6),
 		3px -3px 2px rgb(59, 50, 6),
@@ -189,8 +310,8 @@ ul li span {
 	border-radius: 50%;
 }
 
-#clock::before,
-#clock::after,
+#one .clock::before,
+#one .clock::after,
 .tick {
 	content: "";
 	position: absolute;
@@ -202,7 +323,7 @@ ul li span {
 	z-index: 0;
 }
 
-#clock::after {
+#one .clock::after {
 	rotate: 90deg;
 	background: #3ff189;
 
@@ -240,7 +361,7 @@ ul li span {
 	z-index: 1;
 }
 
-#inner {
+#one .inner {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -289,22 +410,62 @@ ul li span {
 	opacity: .8;
 }
 
-.hour {
-	filter: blur(0px);
-	position: absolute;
-	font-size: 20px;
-	font-weight: 600;
-	right: 50%;
+#one {
+    height: 100%;
+    background-color: transparent;
+    filter: drop-shadow(-25px 18px 14px black);
 }
 
-@keyframes star {
+#two {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+}
 
-	0% {
-		transform: rotate(0deg);
-	}
+#three {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+}    
 
-	100% {
-		transform: rotate(360deg);
-	}
+#four {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+}
 
+#five {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+} 
+
+#six {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+}
+
+#seven {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+} 
+
+#eight { 
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+}
+
+#nine {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
+} 
+
+#ten {
+    height: 100%;
+    background: radial-gradient(#ffffff69 27%, #00000075 40%);
+    background-color: transparent;
 }
