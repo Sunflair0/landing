@@ -134,20 +134,20 @@ footer {
 }
 
 .square {
+	display: grid;
 	position: absolute;
-	border-radius: 10px;
-	border: 6px double rgba(0, 0, 0, 0.7);
+	padding: 10px;
 	height: 85vh;
 	width: 90%;
+	border-radius: 10px;
+	border: 6px double rgba(0, 0, 0, 0.7);	
 	filter: drop-shadow(20px 20px 0 rgba(0, 0, 0, 0.686));
 	transform: translateZ(10px);
 	margin: auto;
 	inset: 0;
-	padding: 10px;
 	/* background: linear-gradient(rgb(255, 244, 97), rgb(190, 181, 117), rgb(255, 255, 255)); */
 	background-image: repeating-radial-gradient(rgb(0, 0, 0), rgba(94, 209, 255, 0.5));
 	background-size: 6px 6px;
-	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(4, 1fr);
 	grid-column-gap: 10px;
