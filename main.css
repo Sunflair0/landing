@@ -24,17 +24,32 @@ html {
 
 body>nav {
 	display: flex;
-	margin-left: 1rem;
+	position: fixed;
+	justify-content: space-around;
+	top: 0;
 	font-size: 20px;
 	height: 5vh;
+	width: 100%;
+
 
 	@media only screen and (max-width: 720px) {
 		margin-left: unset;
-		justify-content: space-evenly;
 		flex-wrap: wrap;
 	}
 
 }
+
+nav {
+	display: flex;
+	position: fixed;
+	z-index: 100;
+}
+
+a:hover {
+	border: 2px solid rgb(0, 0, 0);
+	background: aliceblue;
+}
+
 
 a {
 	height: clamp(7px, 1.25vh, 20px);
@@ -44,6 +59,7 @@ a {
 	background: rgb(185, 191, 115);
 	border-radius: 50%;
 	border: rgb(79, 81, 48) 2px solid;
+	outline: white solid 1px;
 	transition: .07s all;
 }
 
@@ -52,19 +68,9 @@ a:visited {
 	background: rgba(253, 255, 225, 0.125);
 }
 
-nav {
-	position: fixed;
-	z-index: 100;
-}
-
 nav .active {
 	border: 2px solid rgb(0, 0, 0);
-	background: rgb(229, 225, 13);
-}
-
-a:hover {
-	border: 2px solid rgb(0, 0, 0);
-	background: aliceblue;
+	background-color: rgb(229, 13, 13);
 }
 
 header {
