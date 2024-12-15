@@ -8,12 +8,12 @@ body {
 
 header {
 	background: rgb(178, 184, 4);
-	border-bottom: rgb(0, 0, 0) 1px solid;
+	border-bottom: rgb(0, 0, 0) 2px solid;
 }
 
 footer {
 	background: rgb(178, 184, 4);
-	border-top: rgb(0, 0, 0) 1px solid;
+	border-top: rgb(0, 0, 0) 2px solid;
 }
 
 .main_square {
@@ -25,7 +25,12 @@ footer {
 	height: 80vh;
 	width: 90%;
 	border: 2px solid rgb(4, 86, 9);
-	background-color: rgb(0, 255, 255);
+	background: rgb(4, 234, 226);
+	background-image: repeating-linear-gradient(45deg,
+			rgba(0, 0, 0, 0.4) 0 5px,
+			rgb(0, 0, 0, 0.1) 7px 15px);
+	background-size: 15px 15px;
+	background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
 	box-shadow: 0 0 10px black;
 }
 
@@ -90,6 +95,118 @@ footer {
 	margin: auto;
 	inset: 0;
 	background-color: rgb(93, 127, 59);
+}
+
+.bubble_section{
+display: flex;
+justify-content: space-around;
+position: absolute;
+width: 100%;
+height: 15vh;
+margin-top: 63vh;
+}
+
+.bubble_tank {
+	overflow: hidden;
+	box-shadow: 1px 2px 3px rgba(42, 48, 16, 0.784),
+		inset 2px 3px 1px rgb(0, 34, 68);
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 10px;
+	width: 30vw;
+	height: 12vh;
+	border: 1px solid black;
+	margin: auto;
+	padding: 4px;
+	background-image: repeating-linear-gradient(90deg,
+			rgba(0, 0, 0, 0.4) 0 5px,
+			rgb(73, 73, 73) 5px 7px,
+			rgb(0, 0, 0, 0.1) 7px 15px), radial-gradient(circle, rgb(170, 240, 213), rgb(126, 152, 162) 70%);
+}
+
+.bubble {
+	opacity: 0;
+	margin: 4px 0;
+	height: calc(1px * var(--i));
+	width: calc(1px * var(--i));
+	outline: 1px solid rgba(0, 0, 0, 0.764);
+	background-image: linear-gradient(to bottom, rgb(13, 52, 58) 0%, rgba(255, 255, 255, 0.6) 100%);
+	border-radius: 50%;
+	animation: bubble 20s linear infinite;
+	animation-delay: calc(9s * var(--j));
+	position: relative;
+	box-shadow: rgb(0, 0, 0) 0 4px 5px;
+}
+
+.bubble::before {
+	content: "";
+	position: absolute;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+	background-color: rgba(168, 246, 255, 0.75);
+	height: 25%;
+	width: 50%;
+	left: 30%;
+	top: 7%;
+	filter: blur(1px);
+	transform: skewy(-5deg);
+	border-radius: inherit;
+	animation: inherit;
+	animation-delay: inherit;
+
+}
+
+.bubble::after {
+	content: "";
+	position: absolute;
+	height: 110%;
+	width: 110%;
+	border-radius: inherit;
+	animation: inherit;
+	animation-delay: inherit;
+
+}
+
+
+@keyframes bubble {
+	0% {
+		opacity: 1;
+		transform: translatey(0);
+	}
+
+	10%,
+	30% {
+		border-radius: 60% 60% 66% 34% / 65% 25% 45% 45%;
+	}
+
+	25%,
+	75% {
+		border-radius: 64% 76% 64% 36% / 46% 70% 30% 50%;
+	}
+
+	50% {
+		scale: 0.5;
+		opacity: 0.6;
+		background-color: transparent;
+		transform: translatey(20px);
+
+	}
+
+	37.5%,
+	80% {
+		border-radius: 76% 54% 64% 26% / 65% 54% 66% 55%;
+	}
+
+	85% {
+		opacity: 0;
+		scale: .3;
+	}
+
+	100% {
+		scale: 0;
+	}
 }
 
 header,

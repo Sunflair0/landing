@@ -16,6 +16,12 @@ html {
 
 body {
 	background-color: bisque;
+display: flex;
+flex-direction: column;
+}
+
+article {
+display: flex;
 }
 
 .bigbox {
@@ -83,4 +89,17 @@ body {
 	width: 25px;
 	border: 2px blue solid;
 	background-image: linear-gradient(rgb(0, 166, 255), rgb(128, 0, 66));
+}
+
+.bubbles {
+	display: flex;
+	position: relative;
+	width: 80vw;
+	top: 30vh;
+	height: 30vh;
+	border: 2px solid black;
+	margin: auto;
+	background-color: rgb(162, 216, 216);
+	align-items: center;
+	justify-content: space-around;
 }

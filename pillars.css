@@ -2,7 +2,7 @@ body {
 	background-color: rgb(26, 5, 61);
 	background-image:
 		linear-gradient(45deg, hsla(303, 100%, 50%, 0.25), hsla(253, 100%, 50%, 0.25), hsla(55, 100%, 50%, 0.25)),
-		repeating-linear-gradient(90deg, black 0 3px, rgba(255, 255, 255, 0.405) 4px 5px, transparent 5px 45px);
+		repeating-linear-gradient(90deg, black 0 2px,rgb(42, 42, 42) 1px 5px, rgba(255, 255, 255, 0.35) 6px 6px, transparent 7px 45px);
 }
 
 header,

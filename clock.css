@@ -113,6 +113,7 @@ a:active {
 	border-radius: 5px;
 	height: 80vh;
 	width: 18px;
+	z-index: 10;
 
 	>a {
 
