@@ -132,13 +132,15 @@ margin-top: 63vh;
 	margin: 4px 0;
 	height: calc(1px * var(--i));
 	width: calc(1px * var(--i));
-	outline: 1px solid rgba(0, 0, 0, 0.764);
+	outline: 1px solid rgba(0, 0, 0, 0.7);
 	background-image: linear-gradient(to bottom, rgb(13, 52, 58) 0%, rgba(255, 255, 255, 0.6) 100%);
 	border-radius: 50%;
 	animation: bubble 20s linear infinite;
 	animation-delay: calc(9s * var(--j));
 	position: relative;
-	box-shadow: rgb(0, 0, 0) 0 4px 5px;
+	box-shadow: rgb(0, 0, 0) 0 4px 5px,
+inset 0 4px 2px rgba(0, 0, 0, 0.7),
+inset 0 -4px 2px rgba(179, 227, 255, 0.7);
 }
 
 .bubble::before {
