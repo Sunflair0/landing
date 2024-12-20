@@ -1,0 +1,16 @@
+body {
+background: linear-gradient(rgb(37, 49, 36), rgb(46, 56, 42),rgb(71, 84, 66),rgb(53, 64, 49), rgb(24, 30, 22));
+}
+header {
+border-bottom: 2px solid black;
+}
+
+footer {
+border-top: 2px solid black;
+
+}
+
+header, footer {
+color: rgb(225,210,167);
+background: rgb(62,74,57);
+}

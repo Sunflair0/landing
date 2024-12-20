@@ -97,13 +97,13 @@ footer {
 	background-color: rgb(93, 127, 59);
 }
 
-.bubble_section{
-display: flex;
-justify-content: space-around;
-position: absolute;
-width: 100%;
-height: 15vh;
-margin-top: 63vh;
+.bubble_section {
+	display: flex;
+	justify-content: space-around;
+	position: absolute;
+	width: 100%;
+	height: 15vh;
+	margin-top: 63vh;
 }
 
 .bubble_tank {
@@ -122,9 +122,10 @@ margin-top: 63vh;
 	margin: auto;
 	padding: 4px;
 	background-image: repeating-linear-gradient(90deg,
-			rgba(0, 0, 0, 0.4) 0 5px,
-			rgb(73, 73, 73) 5px 7px,
-			rgb(0, 0, 0, 0.1) 7px 15px), radial-gradient(circle, rgb(170, 240, 213), rgb(126, 152, 162) 70%);
+			rgba(44, 80, 63, 0.6) 0 3px,
+			rgb(46, 46, 46) 5px 7px,
+			rgba(18, 97, 146, 0.3) 7px 15px),
+		radial-gradient(circle, rgb(170, 240, 213), rgb(126, 152, 162) 70%);
 }
 
 .bubble {
@@ -139,8 +140,9 @@ margin-top: 63vh;
 	animation-delay: calc(9s * var(--j));
 	position: relative;
 	box-shadow: rgb(0, 0, 0) 0 4px 5px,
-inset 0 4px 2px rgba(0, 0, 0, 0.7),
-inset 0 -4px 2px rgba(179, 227, 255, 0.7);
+		inset 0 4px 2px rgba(0, 0, 0, 0.7),
+		inset 0 -4px 2px rgba(179, 227, 255, 0.7),
+		inset 0 -5px 2px rgb(208, 195, 253);
 }
 
 .bubble::before {
@@ -180,7 +182,7 @@ inset 0 -4px 2px rgba(179, 227, 255, 0.7);
 
 	10%,
 	30% {
-		border-radius: 60% 60% 66% 34% / 65% 25% 45% 45%;
+		border-radius: 60% 60% 66% 34% / 65% 75% 45% 45%;
 	}
 
 	25%,
@@ -192,21 +194,27 @@ inset 0 -4px 2px rgba(179, 227, 255, 0.7);
 		scale: 0.5;
 		opacity: 0.6;
 		background-color: transparent;
-		transform: translatey(20px);
+		transform: translatey(30px);
 
 	}
 
 	37.5%,
 	80% {
-		border-radius: 76% 54% 64% 26% / 65% 54% 66% 55%;
+		border-radius: 76% 54% 64% 26% / 65% 54% 46% 55%;
+
 	}
 
 	85% {
 		opacity: 0;
 		scale: .3;
+		background-color: rgb(196, 192, 192);
+		filter: brightness(2);
+		transform: translatey(40px);
+
+
 	}
 
-	100% {
+	95%,100% {
 		scale: 0;
 	}
 }
