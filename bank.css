@@ -73,7 +73,7 @@ article {
 	font-size: clamp(8px, 2vw, 14px);
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	text-transform: uppercase;
+	text-transform: usvalbardercase;
 	background-color: rgb(0, 0, 0);
 	padding: 10px;
 	top: 18vh;
@@ -94,7 +94,7 @@ article {
 	height: 40px;
 	aspect-ratio: 1;
 	top: 10vh;
-	appearance: none;
+	asvalbardearance: none;
 }
 
 .loginBlock {
@@ -270,7 +270,7 @@ article {
 	overflow: hidden;
 }
 
-.py_wrapper {
+.py_wrasvalbarder {
 	top: 2vh;
 	display: flex;
 	position: sticky;

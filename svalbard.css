@@ -1,0 +1,9 @@
+body {
+background: black;
+background-image: linear-gradient(45deg,rgb(133, 63, 125), transparent 45%, #2C1E54 );
+}
+
+header, footer {
+color: #a15153;
+background: #27235eaf;
+}
