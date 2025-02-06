@@ -1,3 +1,31 @@
+/* @view-transition {
+navigation: auto;
+} */
+
+::view-transition-group(root) {
+	animation-duration: 2s;
+}
+
+::view-transition-old(root) {
+	animation-name: scale-in;
+}
+
+::view-transition-new(root) {
+	animation-name: scale-out;
+}
+
+@keyframes scale-in {
+	from {
+		scale: 0;
+	}
+}
+
+@keyframes scale-out {
+	to {
+		scale: 0;
+	}
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap&family=Inter:wght@500&family=Lora:ital,wght@1,500&Notable&display=swap&familyFredericka+the+Great&family=Inter:wght@500&family=Lora:ital,wght@1,500&family=Noto+Sans+Symbols&family=Rubik+Glitch&family=Open+Sans&family=Roboto&family=Oswald&family=Playfair+Display&display=swap&family=Alumni+Sans+Collegiate+One&display=swap');
 
 :root {

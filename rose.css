@@ -1,8 +1,33 @@
-body {
-background: linear-gradient(#210f0e 5%, #4c2f31 10%, #633239 22%, #a15153 36%, #e77e69 60%, #633239 82%, #210f0e 95%);
+::view-transition-group(root) {
+	animation-duration: 1s;
 }
 
-header, footer {
-color: #a15153;
-background: #1d1a16;
+::view-transition-old(root) {
+	animation-name: scale-in;
+}
+
+::view-transition-new(root) {
+	animation-name: scale-out;
+}
+
+@keyframes scale-in {
+	from {
+		scale: 0;
+	}
+}
+
+@keyframes scale-out {
+	to {
+		scale: 0;
+	}
+}
+
+body {
+	background: linear-gradient(#210f0e 5%, #4c2f31 10%, #633239 22%, #a15153 36%, #e77e69 60%, #633239 82%, #210f0e 95%);
+}
+
+header,
+footer {
+	color: #a15153;
+	background: #1d1a16;
 }

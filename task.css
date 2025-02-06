@@ -24,14 +24,19 @@ footer {
 	margin: auto;
 	height: 80vh;
 	width: 90%;
-	border: 2px solid rgb(4, 86, 9);
-	background: rgb(4, 234, 226);
+	border: 2px solid rgb(33, 63, 35);
+	/* background: rgb(4, 234, 226);
 	background-image: repeating-linear-gradient(45deg,
 			rgba(0, 0, 0, 0.4) 0 5px,
-			rgb(0, 0, 0, 0.1) 7px 15px);
-	background-size: 15px 15px;
-	background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+			rgb(0, 0, 0, 0.1) 7px 15px); 
+	 background-size: 15px 15px; 
+	background-position: 0 0, 0 15px, 15px -15px, -15px 0px; */
 	box-shadow: 0 0 10px black;
+
+	background-image: repeating-linear-gradient(45deg, transparent 0 8px, rgba(144, 142, 121, 0.6) 9px 10px, #000000 10px 13px, transparent 15px 23px),
+		repeating-linear-gradient(-45deg, transparent 0 8px, #000000 10px 12px,#7b5929 13px 14px, rgba(224, 223, 210, 0.771) 15px 15px, transparent 17px 23px),
+		linear-gradient(120deg, #b6c3c2, #40392f);
+
 }
 
 .circle {
@@ -214,7 +219,8 @@ footer {
 
 	}
 
-	95%,100% {
+	95%,
+	100% {
 		scale: 0;
 	}
 }

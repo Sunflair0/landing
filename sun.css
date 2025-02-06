@@ -6,3 +6,12 @@ header, footer {
 color: #000000;
 background: #1d1a16;
 }
+
+.sun {
+height: 300px;
+width: 300px;
+border-radius: 50%;
+background-image: radial-gradient(#F4F6F7 0%,#EFEF6D 10%, #f4e240 20%, #FBD71C 30%,#f2ad64 40%, #fbd988 65%, transparent 100%);
+position: absolute;
+
+}
