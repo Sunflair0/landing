@@ -1,6 +1,7 @@
 body {
 background: black;
-background-image: linear-gradient(45deg,rgb(133, 63, 125), transparent 45%, #2C1E54 );
+background-image: radial-gradient(circle at top right,rgb(133, 63, 125), transparent 45%),
+					radial-gradient(circle at bottom left, #2C1E54 , transparent 45%);
 }
 
 header, footer {
