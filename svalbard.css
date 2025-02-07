@@ -22,6 +22,15 @@ box-shadow: inset 7px 0 3px rgb(75, 74, 74);
 
 }
 
+.star {
+clip-path: polygon(0% 50, 40% 40%, 50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
+width: 100px;
+height: 100px;
+position: relative;
+
+background-color: aqua;
+}
+
 .shineBox {
 border-radius: 0%;
 position: absolute;
