@@ -1,53 +1,79 @@
 body {
-background: rgb(33, 33, 33);
-background-image: radial-gradient(circle at bottom left,rgba(133, 63, 125, 0.63), transparent 45%),
-					radial-gradient(circle at top right, rgb(44, 30, 84) , transparent 45%);
+	background: rgb(33, 33, 33);
+	background-image: radial-gradient(circle at bottom left, rgba(133, 63, 125, 0.63), transparent 45%),
+		radial-gradient(circle at top right, rgb(44, 30, 84), transparent 45%);
 }
 
-header, footer {
-color: #a15153;
-background: #20163d76;
+header,
+footer {
+	color: #a15153;
+	background: #20163d76;
 }
 
 .bubble {
-display: flex;
-position: absolute;
-border-radius: 50%;
-border: rgb(105, 105, 105) 1px solid;
-height: 100px;
-aspect-ratio: 1;
-margin: auto;
-inset: 0;
-box-shadow: inset 3px 0 2px rgba(133, 63, 125, 0.63), inset 7px 0 3px rgb(75, 74, 74);
+	display: flex;
+	position: absolute;
+	border-radius: 50%;
+	border: rgb(105, 105, 105) 1px solid;
+	height: 100px;
+	aspect-ratio: 1;
+	margin: auto;
+	inset: 0;
+	box-shadow: inset 3px 0 2px rgba(133, 63, 125, 0.63), inset 7px 0 3px rgb(75, 74, 74);
+
+}
+
+.blur {
+	filter: drop-shadow(0px 0px 2px rgb(18, 22, 248));
 
 }
 
 .star {
-clip-path: polygon(0% 50, 40% 40%, 50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
-width: 100px;
-height: 100px;
-position: relative;
 
-background-color: aqua;
+	clip-path: polygon(0% 50%, 30% 30%, 50% 0, 65% 30%, 100% 50%, 65% 65%, 50% 100%, 30% 65%);
+	width: 1000px;
+	height: 5px;
+	position: absolute;
+	background-color: rgba(26, 3, 68, 0.856);
+	background-image: radial-gradient(circle, rgb(248, 6, 248) 0%, rgb(188, 7, 243) 50%, transparent);
+	inset: 0;
+	top: 5rem;
 }
 
-.two {
-clip-path: polygon(1% 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
-
+.donut {
+	border-radius: 50%;
+	background-position: center -100%;
+	background-size: 100% 200%;
+	display: flex;
+	position: absolute;
+	border: 20px solid rgb(95, 46, 5);
+	left: 20rem;
+	top: 10rem;
+	border-image-slice: 1;
+	border-image-repeat: round;
+	border-image-source: conic-gradient(red, yellow, green, blue, black);
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background-size: 20px
 }
+
+
 .shineBox {
-height: 150px;
-border-radius: 50%;
-position: absolute;
+	height: 150px;
+	border-radius: 50%;
+	position: absolute;
 }
 
 .shine {
-position: absolute;
-rotate: -1deg;
-height: 30px;
-width: 10px;
-background: linear-gradient(rgb(70 36 163 / 37%) 30% , transparent 30%, transparent 50%, rgb(75 34 189 / 31%) 50%);transform: skew(25deg) translatex(-30px);
+	position: absolute;
+	rotate: -1deg;
+	height: 30px;
+	width: 10px;
+	background: linear-gradient(rgb(70 36 163 / 37%) 30%, transparent 30%, transparent 50%, rgb(75 34 189 / 31%) 50%);
+	transform: skew(25deg) translatex(-30px);
 }
+
 /* 
 .shine::after{
 content: "";
@@ -77,6 +103,6 @@ ul li {
 	font-size: clamp(15px, 3vw, 30px);
 	text-align: center;
 	/*  rotate(calc(20deg * var(--i))); */
-transform:translatex(calc(17px * var(--i)));
+	transform: translatex(calc(17px * var(--i)));
 	inset: .25em;
 }
