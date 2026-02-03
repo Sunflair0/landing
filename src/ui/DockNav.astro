@@ -1,0 +1,134 @@
+---
+import PopoverMenu from "./PopoverMenu.astro";
+import {
+	GROUPS,
+	itemsForGroup,
+	LANES,
+	nurseryItemsForLane,
+	type Group,
+} from "../nav/navLinks";
+
+type Props = { variant?: "home" | "page" };
+const { variant = "home" } = Astro.props;
+
+const groups = GROUPS.map((g) => ({
+	...g,
+	items: itemsForGroup(g.key),
+}));
+---
+
+<nav class={`dock dock--${variant}`} aria-label="Dock navigation">
+	<a class="dock__btn" href="/" aria-label="Home" data-dock="home">⌂</a>
+
+	{
+		groups.map((g) => (
+			<button
+				class="dock__btn"
+				type="button"
+				aria-label={g.label}
+				data-dock={g.key}
+			>
+				{g.key === "projects"
+					? "◉"
+					: g.key === "labs"
+						? "✦"
+						: g.key === "scenes"
+							? "☁"
+							: "🌱"}
+			</button>
+		))
+	}
+
+	<a class="dock__btn" href="/search" aria-label="Search" data-dock="search"
+		>⌕</a
+	>
+	<a class="dock__btn" href="/readme" aria-label="Readme" data-dock="readme"
+		>MD</a
+	>
+
+	{/* Popover containers (hidden until JS toggles) */}
+	{
+		GROUPS.map((g) => (
+			<PopoverMenu
+				id={`menu-${g.key}`}
+				title={g.label}
+				items={itemsForGroup(g.key)}
+			/>
+		))
+	}
+
+	{/* Nursery lanes popover (special) */}
+	<PopoverMenu
+		id="menu-nursery"
+		title="Nursery"
+		lanes={LANES.map((l) => ({
+			label: l.label,
+			items: nurseryItemsForLane(l.key),
+		}))}
+	/>
+
+	<script is:inline>
+		{
+			String.raw`
+      const dock = document.currentScript.closest(".dock");
+      const buttons = dock.querySelectorAll("[data-dock]");
+      let pinned = null;
+
+      const closeAll = () => {
+        dock.querySelectorAll(".popover").forEach(p => p.classList.remove("is-open", "is-pinned"));
+        pinned = null;
+      };
+
+      const openMenu = (key, { pin = false } = {}) => {
+        const id = "menu-" + key;
+        const pop = dock.querySelector("#" + CSS.escape(id));
+        if (!pop) return;
+
+        // close others
+        dock.querySelectorAll(".popover").forEach(p => {
+          if (p !== pop) p.classList.remove("is-open", "is-pinned");
+        });
+
+        pop.classList.add("is-open");
+        if (pin) {
+          pop.classList.add("is-pinned");
+          pinned = key;
+        }
+      };
+
+      const togglePin = (key) => {
+        if (pinned === key) return closeAll();
+        openMenu(key, { pin: true });
+      };
+
+      buttons.forEach(btn => {
+        const key = btn.dataset.dock;
+        if (key === "home" || key === "search" || key === "readme") return;
+
+        btn.addEventListener("mouseenter", () => {
+          if (pinned) return;
+          openMenu(key, { pin: false });
+        });
+
+        btn.addEventListener("mouseleave", () => {
+          if (pinned) return;
+          // allow popover to stay if user moves into it; Popover handles pointer tracking
+          const pop = dock.querySelector("#menu-" + key);
+          if (pop && pop.matches(":hover")) return;
+          pop?.classList.remove("is-open");
+        });
+
+        btn.addEventListener("click", () => togglePin(key));
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeAll();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!dock.contains(e.target)) closeAll();
+      });
+    `;
+		}
+	</script>
+</nav>

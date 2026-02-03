@@ -1,0 +1,55 @@
+---
+import Base from "./Base.astro";
+import DockNav from "../ui/DockNav.astro";
+import TinyHome from "../ui/TinyHome.astro";
+import NurseryControls from "../ui/NurseryControls.astro";
+
+import {
+	getGroupFromPath,
+	getLaneFromPath,
+	getItemFromPath,
+} from "../nav/locations";
+
+type Mode = "home" | "quiet" | "nursery";
+
+const pathname = Astro.url.pathname;
+const currentGroup = getGroupFromPath(pathname);
+const currentLane = getLaneFromPath(pathname);
+const currentItem = getItemFromPath(pathname);
+
+const isHome = pathname === "/";
+const inferredMode: Mode = isHome
+	? "home"
+	: currentGroup === "nursery"
+		? "nursery"
+		: "quiet";
+
+const { mode = inferredMode, title = currentItem?.title ?? "Landings" } =
+	Astro.props;
+---
+
+<Base
+	title={title}
+	group={isHome ? "home" : (currentGroup ?? "other")}
+	pageId={currentItem?.id ?? (isHome ? "home" : "none")}
+	lane={currentLane ?? "none"}
+>
+	{
+		mode === "home" ? (
+			<>
+				<slot />
+				<DockNav variant="home" />
+			</>
+		) : mode === "nursery" ? (
+			<>
+				<NurseryControls />
+				<slot />
+			</>
+		) : (
+			<>
+				<TinyHome />
+				<slot />
+			</>
+		)
+	}
+</Base>

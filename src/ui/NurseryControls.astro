@@ -1,0 +1,18 @@
+---
+import { LANES } from "../nav/navLinks";
+---
+
+<div class="nurseryBar" aria-label="Nursery controls">
+	<a class="nurseryBar__home" href="/" aria-label="Home">⌂</a>
+
+	<button class="nurseryBar__shop" type="button" aria-label="Shop Nursery"
+		>≡</button
+	>
+
+	<div class="nurseryBar__lane">
+		<span class="nurseryBar__label">Lane</span>
+		<select class="nurseryBar__select" aria-label="Nursery lane">
+			{LANES.map((l) => <option value={l.key}>{l.label}</option>)}
+		</select>
+	</div>
+</div>

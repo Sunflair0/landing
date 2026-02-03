@@ -1,0 +1,49 @@
+---
+import { routeFor, type NavItem } from "../nav/navLinks";
+
+type LaneBlock = { label: string; items: NavItem[] };
+
+type Props = {
+	id: string;
+	title: string;
+	items?: NavItem[];
+	lanes?: LaneBlock[];
+};
+
+const { id, title, items = [], lanes = [] } = Astro.props;
+---
+
+<section class="popover" id={id} aria-label={title}>
+	<div class="popover__title">{title}</div>
+
+	{
+		lanes.length ? (
+			<div class="popover__lanes">
+				{lanes.map((block) => (
+					<div class="popover__lane">
+						<div class="popover__laneTitle">{block.label}</div>
+						<ul class="popover__list">
+							{block.items.map((i) => (
+								<li>
+									<a class="popover__link" href={routeFor(i)}>
+										{i.title}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+		) : (
+			<ul class="popover__list">
+				{items.map((i) => (
+					<li>
+						<a class="popover__link" href={routeFor(i)}>
+							{i.title}
+						</a>
+					</li>
+				))}
+			</ul>
+		)
+	}
+</section>

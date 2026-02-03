@@ -1,0 +1,12 @@
+body[data-page="iow"] {
+	background: #ad11ad;
+	color: #e9eefc;
+}
+
+body[data-page="iow"] .iowSplash {
+	min-height: 60vh;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	padding: 2rem;
+}

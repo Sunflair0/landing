@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+	font-family: "Lora", serif;
+	font-size: 40px;
+
+}
+
+body {
+	min-height: 100vh;
+	background: chartreuse;
+
+}

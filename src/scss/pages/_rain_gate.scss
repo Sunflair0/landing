@@ -1,0 +1,12 @@
+body[data-page="rain_gate"] {
+  background: #1142ad;
+  color: #e9eefc;
+}
+
+body[data-page="rain_gate"] .rainSplash {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+}

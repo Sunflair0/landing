@@ -1,0 +1,110 @@
+---
+import Shell from "../../layouts/Shell.astro";
+
+/**
+ * Bubble “seeds” copied from your old file.
+ * Each item becomes: style="--i:...;--j:..."
+ */
+const tank1 = [
+	{ i: 19, j: 9.9 },
+	{ i: 23, j: 2.1 },
+	{ i: 17, j: 3 },
+	{ i: 19, j: 4.1 },
+	{ i: 21, j: 18.7 },
+	{ i: 18, j: 5.1 },
+	{ i: 21, j: 2.8 },
+	{ i: 18, j: 1.7 },
+	{ i: 21, j: 2.5 },
+	{ i: 19, j: 3.1 },
+	{ i: 23, j: 0.01 },
+	{ i: 21, j: 1.7 },
+	{ i: 17, j: 5.9 },
+	{ i: 20, j: 2.1 },
+	{ i: 19, j: 5 },
+	{ i: 15, j: 4.13 },
+	{ i: 23, j: 3.57 },
+	{ i: 25, j: 2.17 },
+	{ i: 22, j: 12.8 },
+	{ i: 18, j: 1.7 },
+	{ i: 21, j: 2.5 },
+	{ i: 15, j: 2.1 },
+	{ i: 18, j: 1.7 },
+	{ i: 21, j: 2.5 },
+	{ i: 19, j: 3.7 },
+	{ i: 20, j: 0.1 },
+	{ i: 13, j: 0.9 },
+	{ i: 25, j: 9.1 },
+	{ i: 23, j: 18.15 },
+	{ i: 20, j: 6.1 },
+	{ i: 25, j: 13.7 },
+	{ i: 18, j: 1.1 },
+	{ i: 19, j: 6.6 },
+	{ i: 20, j: 1.5 },
+	{ i: 23.5, j: 0.7 },
+	{ i: 17, j: 2.9 },
+	{ i: 15, j: 8.1 },
+	{ i: 21, j: 20.5 },
+	{ i: 18, j: 14.3 },
+	{ i: 22, j: 2.8 },
+	{ i: 21, j: 10.5 },
+];
+
+const tank2 = [
+	{ i: 22, j: 2.8 },
+	{ i: 20, j: 6.7 },
+	{ i: 21, j: 2.5 },
+	{ i: 18, j: 1.7 },
+	{ i: 25, j: 3.7 },
+	{ i: 18, j: 1.1 },
+	{ i: 19, j: 3.1 },
+	{ i: 15, j: 4.1 },
+	{ i: 23, j: 3.5 },
+	{ i: 18, j: 2.51 },
+	{ i: 22, j: 2.8 },
+	{ i: 18, j: 13.7 },
+	{ i: 13, j: 0.3 },
+	{ i: 21, j: 2.5 },
+	{ i: 19, j: 7.1 },
+	{ i: 20, j: 0.8 },
+	{ i: 24, j: 2.8 },
+	{ i: 25, j: 2.1 },
+	{ i: 23, j: 3.5 },
+	{ i: 20, j: 4.1 },
+];
+---
+
+<Shell title="Rain Gate" pageId="rain_gate">
+	<div class="main_square">
+		<div class="glass"></div>
+
+		<div class="circle">
+			<div class="mini_circle"></div>
+		</div>
+
+		<div class="bubble_section">
+			<div class="bubble_tank">
+				{
+					tank1.map((b) => (
+						<span style={`--i:${b.i};--j:${b.j}`}>
+							<div class="bubble" />
+						</span>
+					))
+				}
+			</div>
+
+			<div class="bubble_tank">
+				{
+					tank2.map((b) => (
+						<span style={`--i:${b.i};--j:${b.j}`}>
+							<div class="bubble" />
+						</span>
+					))
+				}
+			</div>
+		</div>
+	</div>
+
+	<footer class="taskFooter">
+		<div class="want">Rain Gate</div>
+	</footer>
+</Shell>
