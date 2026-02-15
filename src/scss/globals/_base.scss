@@ -16,6 +16,53 @@ html {
 
 body {
 	min-height: 100vh;
-	background: chartreuse;
+	background: linear-gradient(black, rgb(4, 24, 4), rgb(0, 0, 0));
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+	color: aliceblue;
+}
 
+img,
+picture,
+svg,
+canvas {
+	display: block;
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
+main,
+.page {
+	padding: 2.2rem 1.6rem 6.5rem;
+	/* bottom padding reserves space for dock */
+	max-width: 70ch;
+}
+
+a {
+	color: rgba(var(--glow), .95);
+}
+
+a:hover {
+	color: rgba(var(--glow), 1);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

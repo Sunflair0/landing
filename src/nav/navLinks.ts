@@ -15,6 +15,14 @@ export type NavItem = {
 	use?: string;
 };
 
+export function groupRoute(group: Group) {
+	return `/${group}`;
+}
+
+export function laneRoute(lane: Lane) {
+	return `/nursery/${lane}`;
+}
+
 export const GROUPS: { key: Group; label: string }[] = [
 	{ key: "projects", label: "Projects" },
 	{ key: "labs", label: "Labs" },
@@ -58,15 +66,16 @@ export const NAV_ITEMS: NavItem[] = [
 
 	// Nursery seed
 	{ id: "seed-grad-01", group: "nursery", lane: "workshop", slug: "seed-grad-01", title: "Seed Gradient 01", order: 10 },
-	{ id: "two", group: "nursery", lane: "workshop", slug: "two", title: "TWO", order: 10 },
+	{ id: "brandywine", group: "nursery", lane: "workshop", slug: "brandyWine", title: "Brandy & Wine", order: 10 },
 	{ id: "green", group: "nursery", lane: "workshop", slug: "green", title: "GREEN", order: 10 },
 	{ id: "orange", group: "nursery", lane: "workshop", slug: "orange", title: "ORANGE", order: 10 },
 	{ id: "pistachio", group: "nursery", lane: "workshop", slug: "pistachio", title: "Pistachio", order: 10 },
 	{ id: "plumgold", group: "nursery", lane: "workshop", slug: "plumGold", title: "Plum Gold", order: 10 },
 	{ id: "rose", group: "nursery", lane: "workshop", slug: "rose", title: "ROSE", order: 10 },
-	{ id: "svaldbard", group: "nursery", lane: "workshop", slug: "svalbard", title: "Svalbard", order: 10 },
 	{ id: "sagecream", group: "nursery", lane: "workshop", slug: "sageCream", title: "Sage & Cream", order: 10 },
-	{ id: "brandywine", group: "nursery", lane: "workshop", slug: "brandyWine", title: "Brandy & Wine", order: 10 },
+	{ id: "scoopTV", group: "nursery", lane: "workshop", slug: "scoopTV", title: "Scoop TV", order: 10 },
+	{ id: "svaldbard", group: "nursery", lane: "workshop", slug: "svalbard", title: "Svalbard", order: 10 },
+	{ id: "two", group: "nursery", lane: "workshop", slug: "two", title: "TWO", order: 10 },
 
 ];
 
@@ -89,8 +98,4 @@ export function nurseryItemsForLane(lane: Lane) {
 	return NAV_ITEMS
 		.filter(i => i.group === "nursery" && i.lane === lane)
 		.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
-}
-
-export function laneRoute(lane: Lane) {
-	return `/nursery/${lane}`;
 }

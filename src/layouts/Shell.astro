@@ -1,55 +1,53 @@
 ---
 import Base from "./Base.astro";
 import DockNav from "../ui/DockNav.astro";
-import TinyHome from "../ui/TinyHome.astro";
+import HomeLink from "../ui/HomeLink.astro";
+
+// If you have it, use it; if not, comment this import and the nursery block below.
 import NurseryControls from "../ui/NurseryControls.astro";
 
-import {
-	getGroupFromPath,
-	getLaneFromPath,
-	getItemFromPath,
-} from "../nav/locations";
-
+import { getGroupFromPath, getLaneFromPath, getItemFromPath } from "../nav/locations";
 type Mode = "home" | "quiet" | "nursery";
 
 const pathname = Astro.url.pathname;
-const currentGroup = getGroupFromPath(pathname);
-const currentLane = getLaneFromPath(pathname);
-const currentItem = getItemFromPath(pathname);
+const { bodyClass = "" } = Astro.props;
+
 
 const isHome = pathname === "/";
-const inferredMode: Mode = isHome
-	? "home"
-	: currentGroup === "nursery"
-		? "nursery"
-		: "quiet";
+const currentGroup = getGroupFromPath(pathname);   // "projects" | "labs" | "scenes" | "nursery" | null
+const currentLane = getLaneFromPath(pathname);     // "workshop" | ... | null
+const currentItem = getItemFromPath(pathname);     // NavItem | null
 
-const { mode = inferredMode, title = currentItem?.title ?? "Landings" } =
-	Astro.props;
+const inferredMode: Mode =
+  isHome ? "home" : currentGroup === "nursery" ? "nursery" : "quiet";
+
+const {
+  mode = inferredMode,
+  title = currentItem?.title ?? (isHome ? "Landings" : "Landings"),
+  description,
+} = Astro.props;
+
+// For Base.astro types:
+const baseGroup = (isHome ? "home" : (currentGroup ?? "other"));
+const basePageId = (currentItem?.id ?? (isHome ? "home" : "none"));
+const baseLane = (currentLane ?? "none");
 ---
 
-<Base
-	title={title}
-	group={isHome ? "home" : (currentGroup ?? "other")}
-	pageId={currentItem?.id ?? (isHome ? "home" : "none")}
-	lane={currentLane ?? "none"}
->
-	{
-		mode === "home" ? (
-			<>
-				<slot />
-				<DockNav variant="home" />
-			</>
-		) : mode === "nursery" ? (
-			<>
-				<NurseryControls />
-				<slot />
-			</>
-		) : (
-			<>
-				<TinyHome />
-				<slot />
-			</>
-		)
-	}
+<Base bodyClass={bodyClass} title={title} description={description} group={baseGroup} pageId={basePageId} lane={baseLane}>
+  {mode === "home" ? (
+    <>
+      <slot />
+      <DockNav variant="home" />
+    </>
+  ) : mode === "nursery" ? (
+    <>
+      <NurseryControls />
+      <slot />
+    </>
+  ) : (
+    <>
+      <HomeLink />
+      <slot />
+    </>
+  )}
 </Base>

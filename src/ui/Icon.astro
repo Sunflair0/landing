@@ -1,0 +1,32 @@
+---
+import House from "../icons/houseA.svg?raw";
+import Scenes from "../icons/scenesA.svg?raw";
+
+// 1) Single source of truth
+const ICONS = {
+  house: House,
+  scenes: Scenes,
+} as const;
+
+// 2) Derive the union type: "house" | "scenes"
+
+export type IconName = "house" | "scene"; // add more as you create them
+
+export type Props = {
+  name: IconName;
+  size?: number;
+  class?: string;
+};
+
+
+const { name, size = 24, class: extraClass = "" } = Astro.props as Props;
+
+const svg = ICONS[name];
+
+---
+
+<span
+  class={`sf-icon ${extraClass}`}
+  style={`--icon-size:${size}px`}
+  set:html={svg}
+/>

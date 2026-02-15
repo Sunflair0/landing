@@ -8,6 +8,22 @@
 	min-height: 100vh;
 }
 
+.rest {
+	width: 100%;
+	height: calc(72vh - 1px);
+	position: relative;
+	overflow: hidden;
+	bottom: 0vh;
+	position: relative;
+}
+
+footer {
+padding: 10px;
+background: rgba(0, 0, 0, 0.84);
+border-top: rgba(194, 181, 170, 0.3) 1px solid;
+height: 7vh;
+}
+
 .want {
-font-size: 25px;
+	font-size: clamp(25px, 1.2vh, 12px);
 }

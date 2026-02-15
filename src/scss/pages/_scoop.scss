@@ -1,0 +1,49 @@
+body.scoop {
+	background: #006dff;
+	/* your brilliant electric blue behind */
+}
+
+.rest::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+
+	/* adjust this to control size */
+	background-size: 35px 35px;
+
+	background-repeat: repeat;
+
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect x='4' y='4' width='92' height='92' rx='18' ry='18' fill='%23000'/%3E%3Crect x='4' y='4' width='92' height='92' rx='18' ry='18' fill='none' stroke='%23000' stroke-opacity='0.25' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.rest::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+
+	/* A repeating SVG tile containing multiple crosses, each blinking at different times */
+
+	background-repeat: repeat;
+	background-size: 216px 216px;
+
+	/* make “on” feel neon against the blue base */
+	mix-blend-mode: screen;
+	filter: blur(0.35px);
+	opacity: 0.95;
+}
+
+.rest {
+	background-image: repeating-linear-gradient(green, blue);
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.rest::after {
+		filter: none;
+	}
+
+	/* SVG animation will still run in many browsers; if you want truly still,
+     I can give a non-animated tile variant too. */
+}

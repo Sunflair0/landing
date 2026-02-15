@@ -1,0 +1,30 @@
+body.home {
+	background: #030a13;
+	background-image: linear-gradient(45deg, transparent 25%, rgba(3, 3, 27, 0.575) 29%, #19215dba 30%, rgb(11 11 73 / 45%) 31%, transparent 35% 53%, blue 53%, rgb(49, 119, 250) 53.5%, blue 54%, transparent 54%),
+		linear-gradient(transparent, rgb(11, 11, 43), rgba(0, 0, 255, 0.5), rgb(11, 14, 43), transparent);
+}
+
+.home__hero {
+top: 4vh;
+position: absolute;
+width: 80%;
+
+& h1{
+text-shadow: 5px 5px 2px black, 7px 7px 5px white;
+}
+
+}
+
+.topper {
+display: flex;
+top: 5vh;
+position: relative;
+justify-content: space-between;
+height: 7vh;
+// border: 2px solid red;
+}
+
+.topper a {
+font-size: medium;
+text-decoration: none;
+}

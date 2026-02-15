@@ -1,0 +1,19 @@
+body.spice {
+	background-size: 100% 100%;
+	background-position: 0px 0px;
+	background: rgb(161, 199, 230);
+}
+
+.spiceSplash {
+	background-image: radial-gradient(circle at 50% 130%, rgb(250, 212, 169) 0%, transparent 15%), linear-gradient(90deg, #d5cfdb 5%, #C7DDEEFF 97%);
+}
+
+.panel {
+	background:
+		repeating-radial-gradient(circle at 50% 0,
+			transparent 0 18px,
+			rgba(255, 255, 255, .5) 18px 20px,
+			transparent 20px 48px);
+
+	clip-path: inset(0 round 24px);
+}

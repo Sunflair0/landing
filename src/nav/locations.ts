@@ -1,4 +1,5 @@
-import { NAV_ITEMS, type Group, type Lane } from "./navLinks";
+import { NAV_ITEMS, type Group, type Lane, type NavItem } from "./navLinks";
+
 
 export function getGroupFromPath(pathname: string): Group | null {
 	const seg = pathname.split("/").filter(Boolean)[0];
@@ -14,12 +15,12 @@ export function getLaneFromPath(pathname: string): Lane | null {
 	return null;
 }
 
-export function getItemFromPath(pathname: string) {
+export function getItemFromPath(pathname: string): NavItem | null {
 	const parts = pathname.split("/").filter(Boolean);
 
 	// /nursery/:lane/:slug
 	if (parts[0] === "nursery" && parts.length >= 3) {
-		const lane = parts[1];
+		const lane = parts[1]  as Lane;
 		const slug = parts[2];
 		return NAV_ITEMS.find(i => i.group === "nursery" && i.lane === lane && i.slug === slug) ?? null;
 	}

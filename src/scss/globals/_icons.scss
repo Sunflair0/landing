@@ -1,0 +1,71 @@
+/* ===========================
+   Sunflair Icon System
+=========================== */
+
+.sf-icon {
+	width: var(--icon-size, 24px);
+	height: var(--icon-size, 24px);
+	display: inline-block;
+	color: currentColor;
+
+	/* 👇 glow config knobs */
+	--sf-glow-white: rgba(255, 255, 255, 0.8);
+	--sf-glow-blue: rgba(120, 180, 255, 0.35);
+	--sf-glow-blue2: rgba(120, 180, 255, 0.18);
+
+	/* 👇 default: no glow */
+	filter: none;
+	transition: filter 0.25s ease, transform 0.25s ease;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	path {
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.6;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+
+		vector-effect: non-scaling-stroke;
+		transition: fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease;
+	}
+
+	/* Your existing outline -> fill */
+	&:hover path {
+		fill: currentColor;
+		stroke: none;
+	}
+
+	/* ✅ Hover glow (matches your screenshot vibe) */
+	&:hover {
+		filter:
+			drop-shadow(0 0 3px var(--sf-glow-white)) drop-shadow(0 0 10px var(--sf-glow-blue)) drop-shadow(0 0 22px var(--sf-glow-blue2));
+		transform: translateY(-1px);
+		/* optional polish */
+	}
+
+	/* ✅ Keyboard focus gets glow too */
+	&:focus-visible {
+		filter:
+			drop-shadow(0 0 3px var(--sf-glow-white)) drop-shadow(0 0 12px var(--sf-glow-blue)) drop-shadow(0 0 26px var(--sf-glow-blue2));
+		outline: none;
+		/* don't double-outline */
+	}
+
+	/* If you still want a visible ring for focus */
+	&:focus-visible path {
+		/* outline on path doesn't work reliably for SVG.
+       Better: use box-shadow on the wrapper if you want a ring. */
+	}
+}
+
+/* Optional: focus ring that actually shows */
+.sf-icon:focus-visible {
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+	border-radius: 10px;
+	/* tweak per your icon button shape */
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="114" height="114"
+     viewBox="0 0 114 114">
+
+  <defs>
+    <mask id="scoops">
+      <rect width="104" height="104" fill="white"/>
+      <circle cx="6" cy="6" r="22" fill="black"/>
+      <circle cx="104" cy="6" r="22" fill="black"/>
+      <circle cx="6" cy="104" r="22" fill="black"/>
+      <circle cx="104" cy="104" r="22" fill="black"/>
+    </mask>
+  </defs>
+
+  <rect x="2" y="2" width="104" height="104"
+        rx="28" ry="28"
+        fill="black"
+        mask="url(#scoops)"/>
+
+  <rect x="2" y="2" width="104" height="104"
+        rx="28" ry="28"
+        fill="none"
+        stroke="rgba(240, 231, 231, 0.73)"
+        stroke-width="2"
+        mask="url(#scoops)"/>
+</svg>

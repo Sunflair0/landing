@@ -1,0 +1,194 @@
+/* Dock container */
+
+:root {
+  --dock-btn: clamp(2.4rem, 5vw, 3rem);
+  --dock-icon: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.dock {
+	position: fixed;
+	left: 50%;
+	bottom: 8.5rem;
+	transform: translateX(-50%);
+	z-index: 60;
+}
+
+.dock__bar {
+	display: flex;
+	gap: .25rem;
+	padding: .6rem;
+// border: 1px solid rgb(0 0 0 / 65%);
+// outline: 13px solid rgba(216, 216, 216, 0.125);
+	// outline-offset: 13px;
+	border-radius: 1.1rem;
+	background: linear-gradient(rgba(216, 216, 216, 0.125), rgba(0, 0, 0, 0.125));
+	backdrop-filter: blur(12px);
+
+	box-shadow:
+		0 18px 20px rgba(0, 0, 0, .55),
+		inset 0 1px 0 rgba(70, 52, 235, 0.6);
+}
+
+
+/* Spotlight bloom (the “OnlineTutorials magic”) */
+.dock__bar::before {
+	content: "";
+	position: absolute;
+	inset: -40%;
+	background: radial-gradient(260px 180px at var(--mx, 75%) var(--my, 50%),
+			rgba(var(--glow), .28),
+			transparent 60%);
+	opacity: .9;
+	pointer-events: none;
+}
+
+/* Individual icon buttons */
+.dock__btn {
+	border-radius: .6rem;
+
+  width: var(--dock-btn);
+  height: var(--dock-btn);
+
+	display: grid;
+	place-items: center;
+
+	background: transparent;
+	border: none;
+
+	color: rgba(255, 255, 255, .75);
+
+	font-size: 1.1rem;
+	font-weight: 300;
+	text-shadow: none;
+	opacity: .85;
+
+	cursor: pointer;
+
+	transition: all 160ms ease;
+}
+
+/* Target ONLY home */
+.dock__btn[data-dock="home"] {
+  --dock-btn: clamp(2.8rem, 6vw, 3.5rem);
+  --dock-icon: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+/* And its icon */
+.dock__btn[data-dock="home"] .dock__icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.dock__btn:hover {
+	color: white;
+
+
+	box-shadow:
+		inset 0 0 8px rgba(var(--glow), .35),
+		0 0 12px rgba(var(--glow), .45);
+
+	opacity: 1;
+}
+
+
+.dock__btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(var(--glow), .35);
+}
+
+/* Optional: slightly different “mode” look */
+.dock--page {
+	background: rgba(10, 12, 18, 0.22);
+}
+
+.dock__icon {
+  width: var(--dock-icon);
+  height: var(--dock-icon);
+
+	display: block;
+
+	color: inherit;
+	/* for stroke=currentColor */
+	transition: all 0.2s ease;
+}
+
+
+/* --- Popover base --- */
+.popover {
+	position: absolute;
+	left: 50%;
+	bottom: calc(100% + 0.45rem);
+	transform: translateX(-50%);
+
+	min-width: 16rem;
+	padding: 0.85rem;
+	border-radius: 1rem;
+
+	background: rgba(10, 12, 18, 0.55);
+	border: 1px solid rgba(255, 255, 255, 0.10);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+
+	box-shadow:
+		0 18px 50px rgba(0, 0, 0, 0.55),
+		0 0 36px rgba(var(--glow), 0.10);
+
+	opacity: 0;
+	pointer-events: none;
+	translate: 0 6px;
+	transition: opacity 140ms ease, translate 140ms ease;
+}
+
+.popover.is-open {
+	opacity: 1;
+	pointer-events: auto;
+	translate: 0 0;
+}
+
+/* hover corridor */
+.popover::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -14px;
+	height: 14px;
+}
+
+.popover__title {
+	display: inline-block;
+	font-weight: 650;
+	text-decoration: none;
+	color: rgba(245, 248, 255, 0.95);
+}
+
+.popover__list {
+	margin: 0.65rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.popover__link {
+	display: block;
+	padding: 0.42rem 0.5rem;
+	border-radius: 0.7rem;
+	text-decoration: none;
+	color: rgba(245, 248, 255, 0.88);
+}
+
+.popover__link:hover {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* --- the “hover corridor” --- */
+/* This invisible strip prevents the menu from collapsing when you move up from icon to popover. */
+.popover::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -14px;
+	/* extends downward toward the dock */
+	height: 14px;
+}

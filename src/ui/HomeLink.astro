@@ -1,0 +1,8 @@
+---
+import Icon from "./Icon.astro";
+const { class: extraClass = "" } = Astro.props;
+---
+
+<a class={`homeLink ${extraClass}`} href="/" aria-label="Home">
+	<Icon name="house" class="sf-icon" />
+</a>
