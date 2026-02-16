@@ -1,0 +1,9 @@
+---
+const { count = 5 } = Astro.props;
+---
+
+<div class="pulse-row">
+  {Array.from({ length: count }).map((_, i) => (
+    <div class="pulse-box" style={`--i:${i}`}></div>
+  ))}
+</div>

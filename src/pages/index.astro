@@ -1,5 +1,7 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import PulseRow from "../components/PulseBoxes.astro";
+import Search from "./search.astro";
 ---
 
 <Shell bodyClass="home" mode="home" title="Landings">
@@ -12,9 +14,8 @@ import Shell from "../layouts/Shell.astro";
           <a class="btn" href="/nursery/workshop/seed-grad-01">Start a Seed</a>
         </div>
 
-        <div class="home__searchPlaceholder" aria-label="Search">
-          <a class="btn btn--ghost" href="/search">Search ⌕</a>
-        </div>
+        <Search />
+        <PulseRow />
       </div>
     </section>
   </main>

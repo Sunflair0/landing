@@ -5,7 +5,7 @@
 .sf-icon {
 	width: var(--icon-size, 24px);
 	height: var(--icon-size, 24px);
-	display: inline-block;
+	display: block;
 	color: currentColor;
 
 	/* 👇 glow config knobs */
@@ -17,8 +17,7 @@
 	filter: none;
 	transition: filter 0.25s ease, transform 0.25s ease;
 
-	svg {
-		width: 100%;
+	svg {width: 100%;
 		height: 100%;
 		display: block;
 	}

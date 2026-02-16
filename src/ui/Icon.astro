@@ -1,16 +1,26 @@
 ---
 import House from "../icons/houseA.svg?raw";
 import Scenes from "../icons/scenesA.svg?raw";
+import Search from "../icons/searchA.svg?raw";
+import Readme from "../icons/readmeA.svg?raw";
+import Labs from "../icons/labsA.svg?raw";
+import Nursery from "../icons/nurseryA.svg?raw";
+import Projects from "../icons/projectsA.svg?raw";
+
 
 // 1) Single source of truth
 const ICONS = {
   house: House,
   scenes: Scenes,
+  search: Search,
+  readme: Readme,
+  labs: Labs,
+nursery: Nursery,
+projects: Projects,
 } as const;
 
-// 2) Derive the union type: "house" | "scenes"
-
-export type IconName = "house" | "scene"; // add more as you create them
+// 2) Derive union type from the keys of ICONS
+export type IconName = keyof typeof ICONS;
 
 export type Props = {
   name: IconName;
@@ -18,11 +28,10 @@ export type Props = {
   class?: string;
 };
 
+const { name, size = 40, class: extraClass = "" } = Astro.props as Props;
 
-const { name, size = 24, class: extraClass = "" } = Astro.props as Props;
-
+// 3) Now this is safe
 const svg = ICONS[name];
-
 ---
 
 <span
